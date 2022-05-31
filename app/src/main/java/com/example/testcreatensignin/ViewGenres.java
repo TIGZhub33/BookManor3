@@ -1,6 +1,7 @@
 package com.example.testcreatensignin;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +11,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ViewGenres extends AppCompatActivity {
 
+    //Declarations
     private FloatingActionButton fabGenres;
+    private CardView poetryCardView;
+    private CardView fictionCardView;
+    private CardView romanceCardView;
+    private CardView comedyCardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
