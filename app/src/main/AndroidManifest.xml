@@ -12,13 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestCreateNSignIn">
         <activity
-            android:name=".Folder"
+            android:name=".ProfileManager"
             android:exported="false" />
         <activity
-            android:name=".All_folders"
+            android:name=".Profile"
             android:exported="false" />
         <activity
-            android:name=".floating_add"
+            android:name=".AddFolder"
+            android:exported="false" />
+        <activity
+            android:name=".SingleFolder"
+            android:exported="false" />
+        <activity
+            android:name=".ViewAllFolders"
+            android:exported="false" />
+        <activity
+            android:name=".FloatingAdd"
             android:exported="false" />
         <activity
             android:name=".ViewGenres"
