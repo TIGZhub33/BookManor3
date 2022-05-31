@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Profile">
 
-<<<<<<< HEAD
-=======
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/addToolbar3"
         android:layout_width="match_parent"
@@ -22,5 +20,4 @@
         app:title="Profile"
         app:titleMarginStart="100dp"
         app:titleTextColor="#000000" />
->>>>>>> 179171be5464290f06b6fb696628ec987be3c970
 </androidx.constraintlayout.widget.ConstraintLayout>
