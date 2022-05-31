@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestCreateNSignIn">
         <activity
+            android:name=".Contact_Us"
+            android:exported="false" />
+        <activity
+            android:name=".FAQ"
+            android:exported="false" />
+        <activity
+            android:name=".How_Book_Manor_Works"
+            android:exported="false" />
+        <activity
+            android:name=".Help_Menu"
+            android:exported="false" />
+        <activity
             android:name=".Folder"
             android:exported="false" />
         <activity
