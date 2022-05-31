@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class All_folders extends AppCompatActivity {
+public class AllFolders extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
