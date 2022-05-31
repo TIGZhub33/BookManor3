@@ -69,11 +69,10 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onClick(View view) {
 
-<<<<<<< HEAD
                 startActivity(new Intent(DashBoard.this, AllFolders.class));
-=======
+
                 startActivity(new Intent(DashBoard.this, ViewAllFolders.class));
->>>>>>> 179171be5464290f06b6fb696628ec987be3c970
+
             }
         });
 
