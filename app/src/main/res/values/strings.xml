@@ -93,4 +93,10 @@
 
     <string name="app_info_desc">The app is a book collections application that helps you store all the books you have. Book Manor makes it easier to keep track of every book item in your collection</string>
     <string name="book_manor_2022">Book Manor 2022</string>
+    <string name="fullname">fullname</string>
+    <string name="email">email</string>
+    <string name="fullName">fullName</string>
+    <string name="phone_number">phone number</string>
+    <string name="manage">MANAGE</string>
+    <string name="favourites">FAVOURITES</string>
 </resources>
