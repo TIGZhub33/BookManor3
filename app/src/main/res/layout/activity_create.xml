@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateActivity"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="23dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="378dp"
+        android:layout_height="148dp"
+        android:layout_gravity="center"
+        android:contentDescription="@string/logo"
+        app:srcCompat="@drawable/logo"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="39dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#FFFEFE"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/book_manor"
+        android:textColor="#000000"
+        android:textSize="24sp"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="33dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-medium"
+                android:text="Join for free today"
+                android:textColor="#332E2E"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/create_an_account"
+                android:textColor="#332E2E"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <EditText
+                android:id="@+id/edtFullName"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:hint="Full Name"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColorHint="#757575"/>
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                android:textColorHint="#757575"/>
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                android:textColorHint="#757575"/>
+
+            <EditText
+                android:id="@+id/edtConfPassword"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                android:textColorHint="#757575"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="18dp" />
+
+            <TextView
+                android:id="@+id/txtDirectTermCond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="View Terms and Conditions here"
+                android:textColor="#000000"/>
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="Agree to terms and conditions"
+                android:clickable="true"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="18dp" />
+
+            <Button
+                android:id="@+id/btnCreateAcc"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:text="Create Account"
+                android:textColor="#000000"
+                android:enabled="true"
+                android:backgroundTint="#ECE7F1"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="19dp" />
+
+            <TextView
+                android:id="@+id/txtDirectSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="Already have an account? Sign in."
+                android:textColor="#000000"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

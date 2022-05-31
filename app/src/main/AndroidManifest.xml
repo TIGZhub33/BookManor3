@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.testcreatensignin">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/book_manor"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TestCreateNSignIn">
+        <activity
+            android:name=".Folder"
+            android:exported="false" />
+        <activity
+            android:name=".All_folders"
+            android:exported="false" />
+        <activity
+            android:name=".floating_add"
+            android:exported="false" />
+        <activity
+            android:name=".ViewGenres"
+            android:exported="false" />
+        <activity
+            android:name=".AddGenres"
+            android:exported="false" />
+        <activity
+            android:name=".SingleBookView"
+            android:exported="false" />
+        <activity
+            android:name=".ViewBooks"
+            android:exported="false" />
+        <activity
+            android:name=".AddNewBook"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="false" />
+        <activity
+            android:name=".DashBoard"
+            android:exported="false" />
+        <activity
+            android:name=".TermsAndConditions"
+            android:exported="false" />
+        <activity
+            android:name=".SignInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

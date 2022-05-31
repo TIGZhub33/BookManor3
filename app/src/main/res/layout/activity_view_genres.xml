@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linear_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center|center_horizontal"
+    android:background="#EEE9F4"
+    android:orientation="vertical">
+
+    <!--Screen Scroll-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--TOP HEADER BAR-->
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="34dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="232dp"
+                tools:ignore="MissingConstraints">
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/appColor"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:navigationIcon="?attr/actionModeCloseDrawable"
+                app:title="Gneres"
+                app:titleMargin="10dp"
+                app:titleMarginStart="90dp"
+                app:titleTextColor="@color/black"
+                tools:ignore="MissingConstraints"
+                android:layout_marginBottom="20dp"/>
+
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPoetry"
+                android:layout_width="wrap_content"
+                android:layout_height="149dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/poetryCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp"
+                    android:focusable="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="73dp"
+                            android:layout_height="71dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="39dp"
+                            android:layout_marginTop="22dp"
+                            android:layout_marginEnd="258dp"
+                            android:layout_marginBottom="16dp"
+                            android:contentDescription="@string/genre_icon1"
+                            app:srcCompat="@drawable/poetry_icon" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="86dp"
+                            android:layout_marginBottom="29dp"
+                            android:fontFamily="@font/alata"
+                            android:foregroundGravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:text="@string/poetry"
+                            android:textColor="@color/black"
+                            android:textSize="34sp" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+            <!--GENRE BLOCK-->
+
+            <!--GENRE BLOCK-->
+            <LinearLayout
+                android:id="@+id/linearLayoutFiction"
+                android:layout_width="wrap_content"
+                android:layout_height="172dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutPoetry"
+                app:layout_constraintVertical_bias="0.0">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fictionCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="73dp"
+                            android:layout_height="73dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="-7dp"
+                            android:layout_marginEnd="260dp"
+                            android:contentDescription="genre_icon2"
+                            app:srcCompat="@drawable/fiction_icon"
+                            tools:ignore="ImageContrastCheck" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="157dp"
+                            android:layout_height="53dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="154dp"
+                            android:layout_marginTop="37dp"
+                            android:layout_marginEnd="60dp"
+                            android:layout_marginBottom="43dp"
+                            android:fontFamily="@font/alata"
+                            android:text="@string/fiction"
+                            android:textColor="@color/black"
+                            android:textSize="34sp" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutRomance"
+                android:layout_width="wrap_content"
+                android:layout_height="172dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutFiction"
+                app:layout_constraintVertical_bias="0.0">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/romanceCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="73dp"
+                            android:layout_height="73dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="259dp"
+                            android:contentDescription="genre_icon3"
+                            app:srcCompat="@drawable/love_icon" />
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="188dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="156dp"
+                            android:layout_marginTop="36dp"
+                            android:layout_marginEnd="27dp"
+                            android:layout_marginBottom="39dp"
+                            android:fontFamily="@font/alata"
+                            android:text="@string/romance"
+                            android:textColor="@color/black"
+                            android:textSize="34sp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!--GENRE BLOCK-->
+
+            <!--ProfileButton-->
+            <LinearLayout
+                android:id="@+id/linearLayoutComedy"
+                android:layout_width="wrap_content"
+                android:layout_height="172dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutRomance"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/comedyCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imageView8"
+                            android:layout_width="73dp"
+                            android:layout_height="73dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="46dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginEnd="250dp"
+                            android:layout_marginBottom="29dp"
+                            android:contentDescription="genre_icon3"
+                            app:srcCompat="@drawable/humor_icon" />
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginTop="38dp"
+                            android:layout_marginEnd="65dp"
+                            android:layout_marginBottom="43dp"
+                            android:fontFamily="@font/alata"
+                            android:text="@string/comedy"
+                            android:textColor="@color/black"
+                            android:textSize="34sp" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutComedy">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabAddGenres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/add_genres"
+                    android:keepScreenOn="true"
+                    app:backgroundTint="@color/appColor"
+                    app:srcCompat="@android:drawable/ic_input_add"
+                    tools:ignore="ImageContrastCheck" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+
+</LinearLayout>

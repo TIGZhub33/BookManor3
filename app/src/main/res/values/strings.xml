@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">TestCreateNSignIn</string>
+    <string name="logo">logo</string>
+    <string name="book_manor">Book Manor</string>
+    <string name="create_an_account">Create an account</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="genre_icon1">genre_icon</string>
+    <string name="books_button">Books</string>
+    <string name="genres_button">Genres</string>
+    <string name="folders_button">Folders</string>
+    <string name="menu_books">BOOKS</string>
+    <string name="menu_profile">PROFILE</string>
+    <string name="menu_help">HELP</string>
+    <string name="menu_settings">SETTINGS</string>
+    <string name="menu_exit">EXIT</string>
+    <string name="menu_open">Open Menu</string>
+    <string name="menu_close">Close Menu</string>
+    <string name="profile">profile</string>
+    <string name="title_activity_add_button">AddButton</string>
+
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_all_genres">AllGenresActivity</string>
+    <string name="poetry">POETRY</string>
+    <string name="fiction">FICTION</string>
+    <string name="romance">ROMANCE</string>
+    <string name="comedy">COMEDY</string>
+    <string name="add_genres">ADD GENRE</string>
+    <string name="custom_genre_name">Custom Genre Name</string>
+    <string name="insert_icon">Insert Icon</string>
+    <string name="genre_icon">Genre Icon</string>
+    <string name="num_books_hint">Number of Books Goal for Genre</string>
+    <string name="create_genre">Create Genre</string>
+
+    <string name="new_folder_in_genre">New Folder in Genre</string>
+    <string name="add">Add</string>
+
+    <string name="floating_button">floating_button</string>
+    <string name="manage_account">Manage Account</string>
+    <string name="all_folders">All Folders</string>
+    <string name="view_by">view by</string>
+    <string name="date">date</string>
+    <string name="name">name</string>
+    <string name="genres">Genres</string>
+    <string name="new_book_in_folder">New Book in Folder</string>
+    <string name="genreName">genreName</string>
+    <string name="new_genre_category">New Genre Category</string>
+    <string name="folderName">folderName</string>
+    <string name="bookName">bookName</string>
+    <string name="authorName">authorName</string>
+    <string name="bookDate">date</string>
+    <string name="add_folder">Add Folder</string>
+    <string name="select_the_genre_category">Select the genre category</string>
+    <string name="folder_name">Folder Name</string>
+    <string name="custom_folder_name">custom folder name</string>
+    <string name="add_new_folder">Add New Folder</string>
+</resources>
