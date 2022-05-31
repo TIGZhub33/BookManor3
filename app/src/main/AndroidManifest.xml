@@ -29,14 +29,6 @@
         <activity
             android:name=".AppInfo"
             android:exported="false" />
-
-        <activity
-            android:name=".AllFolders"
-            android:exported="false" />
-
-        <activity
-            android:name=".Profile"
-            android:exported="false" />
         <activity
             android:name=".AddFolder"
             android:exported="false" />
