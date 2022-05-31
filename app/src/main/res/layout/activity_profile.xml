@@ -6,4 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".Profile">
 
+<<<<<<< HEAD
+=======
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/addToolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/appColor"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_back_icon"
+        app:title="Profile"
+        app:titleMarginStart="100dp"
+        app:titleTextColor="#000000" />
+>>>>>>> 179171be5464290f06b6fb696628ec987be3c970
 </androidx.constraintlayout.widget.ConstraintLayout>

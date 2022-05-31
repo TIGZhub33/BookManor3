@@ -21,13 +21,14 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggleOnOff;
     private NavigationView navigationView;
+    //private FloatingActionButton floatingAdd;
 
     private Button buttonGenre, buttonFolder, buttonBooks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dash_board);
+        setContentView(R.layout.activity_dashboard);
 
         toolbar = (Toolbar) findViewById(R.id.nav_toolbar);
 
@@ -68,9 +69,23 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onClick(View view) {
 
+<<<<<<< HEAD
                 startActivity(new Intent(DashBoard.this, AllFolders.class));
+=======
+                startActivity(new Intent(DashBoard.this, ViewAllFolders.class));
+>>>>>>> 179171be5464290f06b6fb696628ec987be3c970
             }
         });
+
+        //floatingAdd = (FloatingActionButton) findViewById(R.id.floatingAddButton);
+
+        //floatingAdd.setOnClickListener(new View.OnClickListener() {
+            //@Override
+           // public void onClick(View view) {
+
+                //startActivity(new Intent(DashBoard.this, FloatingAdd.class));
+           // }
+        //});
 
     }
 
@@ -99,7 +114,7 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
         switch (item.getItemId()){
 
             case R.id.nav_profile:
-                startActivity(new Intent(this, SingleBookView.class));
+                startActivity(new Intent(this, Profile.class));
                 break;
 
             case R.id.nav_books:

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddGenres" >
+    android:background="#EEE9F4"
+    tools:context=".AddGenres">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -26,7 +27,7 @@
                 app:navigationIcon="?attr/actionModeCloseDrawable"
                 app:title="@string/add_genres"
                 app:titleMargin="10dp"
-                app:titleMarginStart="80dp"
+                app:titleMarginStart="100dp"
                 app:titleTextColor="@color/black" />
 
             <LinearLayout
@@ -55,16 +56,6 @@
                     android:layout_marginTop="20dp"
                     android:layout_weight="1">
 
-                    <TextView
-                        android:id="@+id/insertIconTextView"
-                        android:layout_width="166dp"
-                        android:layout_height="56dp"
-                        android:layout_marginStart="20dp"
-                        android:fontFamily="@font/alata"
-                        android:text="@string/insert_icon"
-                        android:textColor="@color/black"
-                        android:textSize="25sp" />
-
                     <Button
                         android:id="@+id/genreIconButton"
                         android:layout_width="148dp"
@@ -79,6 +70,7 @@
                         app:backgroundTint="@android:color/system_neutral1_200"
                         tools:targetApi="s" />
 
+<<<<<<< HEAD
                     <ImageView
                         android:id="@+id/genreIconImageView"
                         android:layout_width="wrap_content"
@@ -88,6 +80,17 @@
                         android:contentDescription="@string/genre_img_content_description"
                         app:srcCompat="@android:drawable/gallery_thumb"
                         tools:ignore="ImageContrastCheck" />
+=======
+                    <TextView
+                        android:id="@+id/insertIconTextView"
+                        android:layout_width="166dp"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/alata"
+                        android:text="@string/insert_icon"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+>>>>>>> 179171be5464290f06b6fb696628ec987be3c970
                 </RelativeLayout>
 
             </LinearLayout>
@@ -143,7 +146,7 @@
                     android:fontFamily="@font/alata"
                     android:text="@string/new_folder_in_genre"
                     android:textColor="@color/black"
-                    android:textSize="25sp" />
+                    android:textSize="20sp" />
 
                 <Button
                     android:id="@+id/addFolderInGenreButton"

@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestCreateNSignIn">
         <activity
+<<<<<<< HEAD
             android:name=".Settings"
             android:exported="false" />
         <activity
@@ -36,6 +37,23 @@
             android:name=".AllFolders"
             android:exported="false" />
         <activity
+=======
+            android:name=".ProfileManager"
+            android:exported="false" />
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
+            android:name=".AddFolder"
+            android:exported="false" />
+        <activity
+            android:name=".SingleFolder"
+            android:exported="false" />
+        <activity
+            android:name=".ViewAllFolders"
+            android:exported="false" />
+        <activity
+>>>>>>> 179171be5464290f06b6fb696628ec987be3c970
             android:name=".FloatingAdd"
             android:exported="false" />
         <activity

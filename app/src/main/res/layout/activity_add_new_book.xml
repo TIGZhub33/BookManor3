@@ -12,16 +12,16 @@
         android:id="@+id/toolbar3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:background="@color/appColor"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:navigationIcon="?attr/actionModeCloseDrawable"
-        app:title="Add Book"
+        app:title="ADD BOOK"
         app:titleMargin="10dp"
-        app:titleMarginStart="90dp"
+        app:titleMarginStart="100dp"
         app:titleTextColor="@color/black"
-        tools:ignore="MissingConstraints"
-        android:layout_marginBottom="20dp"/>
+        tools:ignore="MissingConstraints" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -237,7 +237,7 @@
                 android:layout_below="@+id/edtPageLastRead"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="#ECE7F1"
+                android:backgroundTint="#C5CAE9"
                 android:clickable="true"
                 android:enabled="true"
                 android:text="Add New Book"

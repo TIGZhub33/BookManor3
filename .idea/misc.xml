@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Documents/GitHub/BookManor/BookManor3/app/src/main/res/layout/activity_add_genres.xml" value="0.21422101449275363" />
         <entry key="..\:/Documents/GitHub/BookManor/BookManor3/app/src/main/res/layout/activity_app_info.xml" value="0.11980749746707194" />
         <entry key="..\:/Documents/GitHub/BookManor/BookManor3/app/src/main/res/layout/activity_folders_in_genre.xml" value="0.1" />
@@ -11,6 +12,30 @@
         <entry key="..\:/Documents/GitHub/BookManor/BookManor3/app/src/main/res/layout/activity_notifications.xml" value="0.11980749746707194" />
         <entry key="..\:/Documents/GitHub/BookManor/BookManor3/app/src/main/res/layout/activity_profile.xml" value="0.11980749746707194" />
         <entry key="..\:/Documents/GitHub/BookManor/BookManor3/app/src/main/res/layout/activity_settings.xml" value="0.2" />
+=======
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/activity_add_folder.xml" value="0.3625" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/activity_add_genres.xml" value="0.3625" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/activity_add_new_book.xml" value="0.3625" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/activity_all_folders.xml" value="0.3625" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/activity_dash_board.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/activity_dashboard.xml" value="0.3625" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/activity_floating_add.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/activity_folder.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/activity_main.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/activity_profile.xml" value="0.3484375" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/activity_profile_manager.xml" value="0.3484375" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/activity_sign_in.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/activity_single_book_view.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/activity_splash_screen.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/activity_terms_and_conditions.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/activity_view_books.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/activity_view_genres.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/book_item.xml" value="0.3625" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/folder_item.xml" value="0.3625" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/genre_item.xml" value="0.3625" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/layout/nav_header_layout.xml" value="0.3625" />
+        <entry key="..\:/Users/Talia/AndroidStudioProjects/BookManor3/app/src/main/res/menu/navigation_menu.xml" value="0.3625" />
+>>>>>>> 179171be5464290f06b6fb696628ec987be3c970
         <entry key="..\:/Users/Tony/AndroidStudioProjects/TestCreateNSignIn/app/src/main/res/drawable/ic_android_black_24dp.xml" value="0.1125" />
         <entry key="..\:/Users/Tony/AndroidStudioProjects/TestCreateNSignIn/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2415" />
         <entry key="..\:/Users/Tony/AndroidStudioProjects/TestCreateNSignIn/app/src/main/res/layout/activity_add_book.xml" value="0.33" />

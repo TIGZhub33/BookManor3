@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:fitsSystemWindows="true"
 android:layout_height="match_parent"
 tools:context=".FloatingAdd">
+=======
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEE9F4"
+    android:fitsSystemWindows="true"
+    tools:context=".FloatingAdd">
+>>>>>>> 179171be5464290f06b6fb696628ec987be3c970
 
     <LinearLayout
         android:layout_width="410dp"
@@ -140,20 +150,8 @@ tools:context=".FloatingAdd">
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_back_icon"
+        app:title="Add"
         app:titleMarginStart="110dp"
         app:titleTextColor="#000000" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="410dp"
-        android:layout_height="57dp"
-        android:fontFamily="@font/alata"
-        android:gravity="center"
-        android:text="@string/add"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

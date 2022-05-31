@@ -41,7 +41,7 @@ public class ViewBooks extends AppCompatActivity {
         testList = (ListView) findViewById(R.id.lstBooks);
         bookList = new ArrayList<>();
 
-        addBook = (FloatingActionButton) findViewById(R.id.fabAddBook);
+        addBook = (FloatingActionButton) findViewById(R.id.floatingAddButton);
 
         reference = FirebaseDatabase.getInstance().getReference("Genres/Poetry/Books");
 
