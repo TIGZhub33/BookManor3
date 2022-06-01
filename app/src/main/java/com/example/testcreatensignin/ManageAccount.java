@@ -19,12 +19,21 @@ public class ManageAccount extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_account);
 
-        addProfilePictureButton.findViewById(R.id.addProfilePictureButton);
-        updateDetailsButton.findViewById(R.id.updateDetailsButton);
-        deleteAccountButton.findViewById(R.id.deleteAccountButton);
-        profilePictureImageView.findViewById(R.id.profilePictureImageView);
-        fullNameEt.findViewById(R.id.fullNameEt);
-        emailEt.findViewById(R.id.emailEt);
-        addProfilePictureButton.findViewById(R.id.phoneEt);
+        addProfilePictureButton = (Button) findViewById(R.id.addProfilePictureBtn);
+        updateDetailsButton = (Button) findViewById(R.id.updateDetailsBtn);
+        deleteAccountButton = (Button) findViewById(R.id.deleteAccountBtn);
+        profilePictureImageView = (ImageView) findViewById(R.id.profilePictureImageView);
+        fullNameEt = (EditText) findViewById(R.id.fullNameEt);
+        emailEt = (EditText) findViewById(R.id.emailEt);
+        phoneEt = (EditText) findViewById(R.id.phoneEt);
+
+
+        //addProfilePictureButton.findViewById(R.id.addProfilePictureButton);
+        //updateDetailsButton.findViewById(R.id.updateDetailsButton);
+        //deleteAccountButton.findViewById(R.id.deleteAccountButton);
+        //profilePictureImageView.findViewById(R.id.profilePictureImageView);
+        //fullNameEt.findViewById(R.id.fullNameEt);
+        //emailEt.findViewById(R.id.emailEt);
+        //addProfilePictureButton.findViewById(R.id.phoneEt);
     }
 }

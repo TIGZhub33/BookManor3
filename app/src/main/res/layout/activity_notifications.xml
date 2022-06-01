@@ -24,10 +24,10 @@
         app:titleTextColor="@color/black" />
 
     <androidx.cardview.widget.CardView
-        android:layout_width="382dp"
+        android:layout_width="wrap_content"
         android:layout_height="130dp"
         android:layout_marginTop="20dp"
-        app:cardBackgroundColor="@color/material_dynamic_neutral90"
+        app:cardBackgroundColor="@color/browser_actions_bg_grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,10 +103,10 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="382dp"
+        android:layout_width="wrap_content"
         android:layout_height="130dp"
         android:layout_marginTop="180dp"
-        app:cardBackgroundColor="@color/material_dynamic_neutral90"
+        app:cardBackgroundColor="@color/browser_actions_bg_grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

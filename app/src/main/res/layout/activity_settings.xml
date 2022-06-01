@@ -46,7 +46,8 @@
             android:id="@+id/manageAccountCardView"
             android:layout_width="322dp"
             android:layout_height="68dp"
-            android:layout_marginStart="50dp">
+            android:layout_marginStart="50dp"
+            android:clickable="true">
 
             <RelativeLayout
                 android:layout_width="309dp"
@@ -87,7 +88,8 @@
             android:layout_width="322dp"
             android:layout_height="68dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="170dp">>
+            android:layout_marginTop="170dp"
+            android:clickable="true">>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -126,7 +128,8 @@
             android:layout_width="322dp"
             android:layout_height="68dp"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="260dp">
+            android:layout_marginTop="260dp"
+            android:clickable="true">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -164,7 +167,8 @@
             android:layout_width="322dp"
             android:layout_height="68dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="350dp">
+            android:layout_marginTop="350dp"
+            android:clickable="true">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -202,7 +206,8 @@
             android:layout_width="322dp"
             android:layout_height="68dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="440dp">
+            android:layout_marginTop="440dp"
+            android:clickable="true">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -240,7 +245,8 @@
             android:layout_width="322dp"
             android:layout_height="68dp"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="530dp">
+            android:layout_marginTop="530dp"
+            android:clickable="true">
 
             <RelativeLayout
                 android:layout_width="match_parent"

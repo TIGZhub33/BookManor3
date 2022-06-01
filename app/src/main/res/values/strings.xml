@@ -98,4 +98,7 @@
     <string name="phone_number">phone number</string>
     <string name="manage">MANAGE</string>
     <string name="favourites">FAVOURITES</string>
+
+
+    <string name="test_string">Testing</string>
 </resources>
