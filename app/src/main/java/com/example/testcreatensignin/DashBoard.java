@@ -21,13 +21,14 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggleOnOff;
     private NavigationView navigationView;
+    //private FloatingActionButton floatingAdd;
 
     private Button buttonGenre, buttonFolder, buttonBooks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dash_board);
+        setContentView(R.layout.activity_dashboard);
 
         toolbar = (Toolbar) findViewById(R.id.nav_toolbar);
 
@@ -68,9 +69,20 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(DashBoard.this, All_folders.class));
+                startActivity(new Intent(DashBoard.this, ViewAllFolders.class));
+
             }
         });
+
+        //floatingAdd = (FloatingActionButton) findViewById(R.id.floatingAddButton);
+
+        //floatingAdd.setOnClickListener(new View.OnClickListener() {
+            //@Override
+           // public void onClick(View view) {
+
+                //startActivity(new Intent(DashBoard.this, FloatingAdd.class));
+           // }
+        //});
 
     }
 
@@ -99,15 +111,20 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
         switch (item.getItemId()){
 
             case R.id.nav_profile:
-                startActivity(new Intent(this, SingleBookView.class));
+                startActivity(new Intent(this, Profile.class));
                 break;
 
             case R.id.nav_books:
                 startActivity(new Intent(this, ViewBooks.class));
                 break;
 
+<<<<<<< HEAD
             case R.id.nav_help:
                 startActivity(new Intent(this, Help_Menu.class));
+=======
+            case R.id.nav_settings:
+                startActivity(new Intent(this, Settings.class));
+>>>>>>> 9502f02afdb589dd364469fa675fc40eaf49f72a
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

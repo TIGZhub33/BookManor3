@@ -1,53 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:id="@+id/linearLayout13"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="#EEE9F4"
-    tools:context=".ViewBooks"
-    android:orientation="vertical">
+    tools:context=".ViewBooks">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/appColor"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="?attr/actionModeCloseDrawable"
         app:title="Books"
         app:titleMargin="10dp"
-        app:titleMarginStart="90dp"
+        app:titleMarginStart="100dp"
         app:titleTextColor="@color/black"
-        tools:ignore="MissingConstraints"
-        android:layout_marginBottom="20dp"/>
+        tools:ignore="MissingConstraints" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="410dp"
+        android:layout_height="676dp"
         android:orientation="vertical"
-        android:background="#EEE9F4">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3">
 
-        <ListView
-            android:id="@+id/lstBooks"
+        <LinearLayout
+            android:id="@+id/linearLayout14"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp" />
+            android:background="#EEE9F4"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/lstBooks"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+            </ListView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="413dp"
+        android:layout_height="732dp"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabAddBook"
+            android:id="@+id/floatingAddButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
             android:layout_margin="10dp"
             android:clickable="true"
-            android:contentDescription="Add Book"
+            android:contentDescription="@string/floating_button"
+            android:focusable="true"
             android:keepScreenOn="true"
             app:backgroundTint="@color/appColor"
             app:srcCompat="@android:drawable/ic_input_add"
-            tools:ignore="ImageContrastCheck"/>
+            tools:ignore="RtlHardcoded,ImageContrastCheck" />
 
     </LinearLayout>
 
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
