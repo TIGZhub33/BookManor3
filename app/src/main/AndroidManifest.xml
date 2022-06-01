@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TestCreateNSignIn">
+
         <activity
-<<<<<<< HEAD
             android:name=".Contact_Us"
             android:exported="false" />
         <activity
@@ -25,10 +25,7 @@
             android:name=".Help_Menu"
             android:exported="false" />
         <activity
-            android:name=".Folder"
-=======
             android:name=".Settings"
->>>>>>> 9502f02afdb589dd364469fa675fc40eaf49f72a
             android:exported="false" />
         <activity
             android:name=".Profile"
@@ -55,7 +52,6 @@
             android:name=".ViewAllFolders"
             android:exported="false" />
         <activity
-
             android:name=".FloatingAdd"
             android:exported="false" />
         <activity

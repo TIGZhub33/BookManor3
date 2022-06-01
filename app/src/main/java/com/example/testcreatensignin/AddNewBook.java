@@ -78,7 +78,7 @@ public class AddNewBook extends AppCompatActivity {
         genreSelection.setAdapter(adapterItem1);
         folderSelection.setAdapter(adapterItem2);
 
-        //dbReference = FirebaseDatabase.getInstance().getReference("Books");
+        dbReference = FirebaseDatabase.getInstance().getReference("Folder/Genres/Poetry/Books");
         //dbReferencePoetry = FirebaseDatabase.getInstance().getReference("Genres/Poetry/Books");
         //dbReferenceRomance = FirebaseDatabase.getInstance().getReference("Genres/Romance/Books");
         //dbReferenceFiction = FirebaseDatabase.getInstance().getReference("Genres/Fiction/Books");
@@ -91,6 +91,8 @@ public class AddNewBook extends AppCompatActivity {
                 String genre = adapterView.getItemAtPosition(i).toString();
                 Toast.makeText(AddNewBook.this, "Genre " + genre, Toast.LENGTH_SHORT).show();
 
+
+                /*
                 if(genre == "Poetry"){
                     dbReference = FirebaseDatabase.getInstance().getReference("Genres/Poetry/Books");
                 }
@@ -103,6 +105,9 @@ public class AddNewBook extends AppCompatActivity {
                 if(genre == "Comedy"){
                     dbReference = FirebaseDatabase.getInstance().getReference("Genres/Comedy/Books");
                 }
+                 */
+
+
             }
         });
 
