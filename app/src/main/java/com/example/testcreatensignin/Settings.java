@@ -16,6 +16,13 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        manageAccountCv.findViewById(R.id.manageAccountCardView);
+        inviteFriendsCv.findViewById(R.id.inviteFriednsCardView);
+        notificationsCv.findViewById(R.id.notificationsCardView);
+        helpAndSupportCv.findViewById(R.id.helpandSupportCardView);
+        appInfoCv.findViewById(R.id.appInfoCardView);
+        signOutCv.findViewById(R.id.signOutCardView);
+
         manageAccountCv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
