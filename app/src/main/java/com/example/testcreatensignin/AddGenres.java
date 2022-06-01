@@ -35,6 +35,7 @@ public class AddGenres extends AppCompatActivity {
     GenreInfo genreInfo;
     String customGenreName, booksGoalS;
     int booksGoal;
+    private Bitmap icon;
 
     //private String[] genres = {"Poetry", "Fiction", "Romance", "Comedy"};
 
@@ -59,11 +60,12 @@ public class AddGenres extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                //invokes imageChooser method when the genre icon button is clicked
-                imageChooser();
+                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, 3);
 
             }
         });
+
 
         createGenreButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +74,7 @@ public class AddGenres extends AppCompatActivity {
                 //createNewGenre();
                 customGenreName = etGenreName.getText().toString();
                 booksGoalS = etNoBooksGoal.getText().toString();
+                icon = ivGenreIcon.getDrawingCache();
                 // below line is for checking whether edittext fields are empty or not.
                 if (customGenreName.isEmpty() && booksGoalS.isEmpty())
                 {
@@ -81,12 +84,24 @@ public class AddGenres extends AppCompatActivity {
                 else
                 {
                     booksGoal = Integer.parseInt(booksGoalS);
-                    addDataToFirebase(customGenreName, booksGoal);
+                    addDataToFirebase(customGenreName, booksGoal, icon);
                 }
             }
         });
 
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode,resultCode,data);
+        if(resultCode == RESULT_OK && data != null)
+        {
+            Uri selectedImage = data.getData();
+            ivGenreIcon.setImageURI(selectedImage);
+        }
+    }
+
 
     public void createNewGenre(){
 
@@ -110,7 +125,7 @@ public class AddGenres extends AppCompatActivity {
 
     }
 
-    private void addDataToFirebase(String customGenreName, int goal) {
+    private void addDataToFirebase(String customGenreName, int goal, Bitmap icon) {
         genreInfo.setCustomGenreName(customGenreName);
         genreInfo.setBooksGoal(goal);
 
@@ -133,34 +148,6 @@ public class AddGenres extends AppCompatActivity {
         });
     }
 
-    private void imageChooser()
-    {
-        Intent i = new Intent();
-        i.setType("image/*");
-        i.setAction(Intent.ACTION_GET_CONTENT);
 
-        launchSomeActivity.launch(i);
-    }
 
-    ActivityResultLauncher<Intent> launchSomeActivity = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result ->
-    {
-        if (result.getResultCode() == Activity.RESULT_OK)
-        {
-            Intent data = result.getData();
-            if (data != null && data.getData() != null)
-            {
-                Uri selectedImageUri = data.getData();
-                Bitmap selectedImageBitmap = null;
-                try
-                {
-                    selectedImageBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(),selectedImageUri);
-                }
-                catch (IOException e)
-                {
-                    e.printStackTrace();
-                }
-                ivGenreIcon.setImageBitmap(selectedImageBitmap);
-            }
-        }
-    });
 }
