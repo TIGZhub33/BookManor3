@@ -24,12 +24,47 @@ public class ViewGenres extends AppCompatActivity {
         setContentView(R.layout.activity_view_genres);
 
         fabGenres = (FloatingActionButton) findViewById(R.id.fabAddGenres);
+        poetryCardView = (CardView) findViewById(R.id.poetryCardView);
+        fictionCardView = (CardView) findViewById(R.id.fictionCardView);
+        romanceCardView = (CardView) findViewById(R.id.romanceCardView);
+        comedyCardView = (CardView) findViewById(R.id.comedyCardView);
 
         fabGenres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 startActivity(new Intent(ViewGenres.this, AddGenres.class));
+            }
+        });
+
+        poetryCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+            }
+        });
+
+        fictionCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+            }
+        });
+
+        romanceCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+            }
+        });
+        comedyCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
             }
         });
     }
