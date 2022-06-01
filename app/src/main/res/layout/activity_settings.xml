@@ -43,9 +43,10 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar4">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/manageAccountCardView"
             android:layout_width="322dp"
             android:layout_height="68dp"
-            android:layout_marginStart="20dp">
+            android:layout_marginStart="50dp">
 
             <RelativeLayout
                 android:layout_width="309dp"
@@ -82,9 +83,10 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/inviteFriednsCardView"
             android:layout_width="322dp"
             android:layout_height="68dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="170dp">>
 
             <RelativeLayout
@@ -120,9 +122,10 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/notificationsCardView"
             android:layout_width="322dp"
             android:layout_height="68dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="260dp">
 
             <RelativeLayout
@@ -157,10 +160,11 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/helpandSupportCardView"
             android:layout_width="322dp"
             android:layout_height="68dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="350dp" >
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="350dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -194,10 +198,11 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/appInfoCardView"
             android:layout_width="322dp"
             android:layout_height="68dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="440dp" >
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="440dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -231,10 +236,11 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/signOutCardView"
             android:layout_width="322dp"
             android:layout_height="68dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="530dp" >
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="530dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"

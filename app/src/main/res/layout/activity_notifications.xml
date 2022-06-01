@@ -50,6 +50,7 @@
                 android:textSize="23sp" />
 
             <RadioGroup
+                android:id="@+id/emailRadioGroup"
                 android:layout_width="166dp"
                 android:layout_height="179dp"
                 android:layout_alignParentStart="true"
@@ -128,6 +129,7 @@
                 android:textSize="23sp" />
 
             <RadioGroup
+                android:id="@+id/smsRadioGroup"
                 android:layout_width="166dp"
                 android:layout_height="179dp"
                 android:layout_alignParentStart="true"
