@@ -16,12 +16,19 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        manageAccountCv.findViewById(R.id.manageAccountCardView);
-        inviteFriendsCv.findViewById(R.id.inviteFriednsCardView);
-        notificationsCv.findViewById(R.id.notificationsCardView);
-        helpAndSupportCv.findViewById(R.id.helpandSupportCardView);
-        appInfoCv.findViewById(R.id.appInfoCardView);
-        signOutCv.findViewById(R.id.signOutCardView);
+        manageAccountCv = (CardView) findViewById(R.id.manageAccountCardView);
+        inviteFriendsCv = (CardView) findViewById(R.id.inviteFriednsCardView);
+        notificationsCv = (CardView) findViewById(R.id.notificationsCardView);
+        helpAndSupportCv = (CardView) findViewById(R.id.helpandSupportCardView);
+        appInfoCv = (CardView) findViewById(R.id.appInfoCardView);
+        signOutCv = (CardView) findViewById(R.id.signOutCardView);
+
+        //manageAccountCv.findViewById(R.id.manageAccountCardView);
+        //inviteFriendsCv.findViewById(R.id.inviteFriednsCardView);
+        //notificationsCv.findViewById(R.id.notificationsCardView);
+        //helpAndSupportCv.findViewById(R.id.helpandSupportCardView);
+        //appInfoCv.findViewById(R.id.appInfoCardView);
+        //signOutCv.findViewById(R.id.signOutCardView);
 
         manageAccountCv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +59,7 @@ public class Settings extends AppCompatActivity {
             public void onClick(View view)
             {
 
-
+                startActivity(new Intent(Settings.this, Help_Menu.class));
             }
         });
 
@@ -61,6 +68,7 @@ public class Settings extends AppCompatActivity {
             public void onClick(View view)
             {
 
+                startActivity(new Intent(Settings.this, AppInfo.class));
             }
         });
 
@@ -69,8 +77,7 @@ public class Settings extends AppCompatActivity {
             public void onClick(View view)
             {
 
-
-
+                startActivity(new Intent(Settings.this, SignInActivity.class));
             }
         });
     }

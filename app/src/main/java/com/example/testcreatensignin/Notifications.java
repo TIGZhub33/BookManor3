@@ -21,14 +21,23 @@ public class Notifications extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifications);
 
-        etEmail.findViewById(R.id.emailEditText);
-        etPhone.findViewById(R.id.phoneEditText);
-        emailRadioGroup.findViewById(R.id.emailRadioGroup);
-        smsRadioGroup.findViewById(R.id.smsRadioGroup);
-        yesEmailRadioButton.findViewById(R.id.yesEmailRadioButton);
-        noEmailRadioButton.findViewById(R.id.noEmailRadioButton);
-        yesSmsRadioButton.findViewById(R.id.yesSmsRadioButton);
-        noSmsRadioButton.findViewById(R.id.noSmsRadioButton);
+        etEmail = (EditText) findViewById(R.id.emailEditText);
+        etPhone = (EditText) findViewById(R.id.phoneEditText);
+        emailRadioGroup = (RadioGroup) findViewById(R.id.emailRadioGroup);
+        smsRadioGroup = (RadioGroup) findViewById(R.id.smsRadioGroup);
+        yesEmailRadioButton = (RadioButton) findViewById(R.id.yesEmailRadioButton);
+        noEmailRadioButton = (RadioButton) findViewById(R.id.noEmailRadioButton);
+        yesSmsRadioButton = (RadioButton) findViewById(R.id.yesSmsRadioButton);
+        noSmsRadioButton = (RadioButton) findViewById(R.id.noSmsRadioButton);
+
+        //etEmail.findViewById(R.id.emailEditText);
+        //etPhone.findViewById(R.id.phoneEditText);
+        //emailRadioGroup.findViewById(R.id.emailRadioGroup);
+        //smsRadioGroup.findViewById(R.id.smsRadioGroup);
+        //yesEmailRadioButton.findViewById(R.id.yesEmailRadioButton);
+        //noEmailRadioButton.findViewById(R.id.noEmailRadioButton);
+        //yesSmsRadioButton.findViewById(R.id.yesSmsRadioButton);
+        //noSmsRadioButton.findViewById(R.id.noSmsRadioButton);
 
         if(yesEmailRadioButton.isChecked() == true)
         {
