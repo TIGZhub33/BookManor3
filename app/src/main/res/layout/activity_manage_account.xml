@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EEE9F4"
     tools:context=".ManageAccount">
 
     <RelativeLayout
@@ -43,11 +44,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Add a profile picture"
-                android:textSize="15sp"
+                android:backgroundTint="#E1BEE7"
                 android:fontFamily="@font/alata"
+                android:text="Add a profile picture"
                 android:textColor="@color/black"
-                android:backgroundTint="@color/browser_actions_bg_grey"/>
+                android:textSize="15sp"
+                app:cornerRadius="10dp" />
 
 
             <EditText
@@ -85,25 +87,27 @@
                 android:id="@+id/updateDetailsBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_gravity="center_horizontal"
-                android:text="update details"
-                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#C5CAE9"
                 android:fontFamily="@font/alata"
+                android:text="update details"
                 android:textColor="@color/black"
-                android:backgroundTint="@color/browser_actions_bg_grey"/>
+                android:textSize="15sp"
+                app:cornerRadius="10dp" />
 
             <Button
                 android:id="@+id/deleteAccountBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_gravity="center_horizontal"
-                android:text="Delete account"
-                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/browser_actions_bg_grey"
                 android:fontFamily="@font/alata"
+                android:text="Delete account"
                 android:textColor="@color/black"
-                android:backgroundTint="@color/browser_actions_bg_grey"/>
+                android:textSize="15sp"
+                app:cornerRadius="10dp" />
 
         </LinearLayout>
 
