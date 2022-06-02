@@ -7,31 +7,35 @@
     android:fitsSystemWindows="true"
     tools:context=".FoldersInGenre">
 
-    <ScrollView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="@color/appColor"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="?attr/actionModeCloseDrawable" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="669dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar2"
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/appColor"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
-                app:navigationIcon="?attr/actionModeCloseDrawable" />
-
-            <TextView
-                android:id="@+id/goalTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/alata"
-                android:textColor="@color/black"
-                android:textSize="25sp" />
+                android:layout_height="37dp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -58,7 +62,50 @@
                     app:backgroundTint="@color/material_dynamic_neutral90" />
             </RelativeLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="147dp">
+
+                <ListView
+                    android:id="@+id/lstBooks"
+                    android:layout_width="match_parent"
+                    android:layout_height="676dp"
+                    android:padding="10dp">
+
+                </ListView>
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout16"
+        android:layout_width="413dp"
+        android:layout_height="732dp"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingAddButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:contentDescription="@string/floating_button"
+            android:focusable="true"
+            android:keepScreenOn="true"
+            app:backgroundTint="@color/appColor"
+            app:srcCompat="@android:drawable/ic_input_add"
+            tools:ignore="RtlHardcoded,ImageContrastCheck" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
