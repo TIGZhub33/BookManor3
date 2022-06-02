@@ -1,19 +1,34 @@
 package com.example.testcreatensignin;
 
+import android.graphics.Bitmap;
 import android.media.Image;
+import android.provider.ContactsContract;
+import android.widget.ImageView;
 
 public class GenreInfo
 {
+
     private String customGenreName;
     private int booksGoal;
+    private ImageView icon;
 
-    private Image icon;
+    public GenreInfo(String customGenreName, int booksGoal, ImageView icon) {
+        this.customGenreName = customGenreName;
+        this.booksGoal = booksGoal;
+        this.icon = icon;
+    }
 
-    public Image getIcon() {
+    public GenreInfo(String customGenreName, int booksGoal) {
+        this.customGenreName = customGenreName;
+        this.booksGoal = booksGoal;
+    }
+
+
+    public ImageView getIcon() {
         return icon;
     }
 
-    public void setIcon(Image icon) {
+    public void setIcon(ImageView icon) {
         this.icon = icon;
     }
 

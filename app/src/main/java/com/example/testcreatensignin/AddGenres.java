@@ -2,33 +2,21 @@ package com.example.testcreatensignin;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
-import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class AddGenres extends AppCompatActivity {
     //Declarations
@@ -59,15 +47,15 @@ public class AddGenres extends AppCompatActivity {
 
         dbReference = FirebaseDatabase.getInstance().getReference("GenreInfo");
 
+        ivGenreIcon = (ImageView) findViewById(R.id.genreIconImageView);
+
         //sets on click listener for the genre icon button
         insertIconButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-
-                startActivityForResult(intent, 3);
+                imageChooser();
 
             }
         });
@@ -90,79 +78,55 @@ public class AddGenres extends AppCompatActivity {
                 else
                 {
                     booksGoal = Integer.parseInt(booksGoalS);
-                    addDataToFirebase(customGenreName, booksGoal, icon);
+                    createNewGenre();
+                    startActivity(new Intent(AddGenres.this, ViewGenres.class));
                 }
             }
         });
 
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    private void imageChooser()
     {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 3 && resultCode == Activity.RESULT_OK) {
-            Uri contentUri = data.getData();
-            String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-            String imageFileName = "JPEG_" + timestamp + "." + getFileExt(contentUri);
-            Log.d("tag", "onActivityResult : Gallery Image Uri: " + imageFileName);
-            ivGenreIcon.setImageURI(contentUri);
-        }
+        Intent i = new Intent();
+        i.setType("image/*");
+        i.setAction(Intent.ACTION_GET_CONTENT);
+
+        launchSomeActivity.launch(i);
     }
 
-    private String getFileExt(Uri contentUri)
+    ActivityResultLauncher<Intent> launchSomeActivity = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result ->
     {
-        ContentResolver c = getContentResolver();
-        MimeTypeMap mime = MimeTypeMap.getSingleton();
-        return mime.getExtensionFromMimeType(c.getType(contentUri));
-    }
+                if (result.getResultCode() == Activity.RESULT_OK)
+                {
+                    Intent data = result.getData();
+                    // do your operation from here....
+                    if (data != null
+                            && data.getData() != null) {
+                        Uri selectedImageUri = data.getData();
+                        Bitmap selectedImageBitmap = null;
+                        try {
+                            selectedImageBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImageUri);
+                        }
+                        catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        ivGenreIcon.setScaleType(ImageView.ScaleType.FIT_XY);
+                        ivGenreIcon.setImageBitmap(selectedImageBitmap);
+                    }
+                }
+            });
+
 
 
     public void createNewGenre(){
 
-        String cGenreName = etGenreName.getText().toString();
-
-        /*
-        Books book = new Books(cTitle, cAuthor, cIllustrator, cNoPages, cPageLastRead, cDateAdded);
-
-        dbReference.push().setValue(book);
-
-        Toast.makeText(AddNewBook.this, "Data inserted!  :)", Toast.LENGTH_SHORT).show();
-
-        startActivity(new Intent(AddNewBook.this, ViewBooks.class));
-         */
-
-        Genres genre = new Genres(cGenreName);
-
+        customGenreName = etGenreName.getText().toString();
+        booksGoal = Integer.parseInt(etNoBooksGoal.getText().toString());
+        GenreInfo genre = new GenreInfo(customGenreName, booksGoal, ivGenreIcon);
         dbReference.push().setValue(genre);
 
         Toast.makeText(AddGenres.this, "Genre created successfully!", Toast.LENGTH_SHORT).show();
 
     }
-
-    private void addDataToFirebase(String customGenreName, int goal, Bitmap icon) {
-        genreInfo.setCustomGenreName(customGenreName);
-        genreInfo.setBooksGoal(goal);
-
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                // database reference will sends data to firebase.
-                databaseReference.setValue(genreInfo);
-
-                // after adding this data we are showing toast message.
-                Toast.makeText(AddGenres.this, "Genre Added", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                // if the data is not added or it is cancelled then
-                // we are displaying a failure toast message.
-                Toast.makeText(AddGenres.this, "Failed to add data " + error, Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-
-
 }

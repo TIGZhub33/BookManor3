@@ -72,11 +72,12 @@
 
                     <ImageView
                         android:id="@+id/genreIconImageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="7dp"
                         android:contentDescription="@string/genre_img_content_description"
+                        android:scaleType="fitXY"
                         app:srcCompat="@android:drawable/gallery_thumb"
                         tools:ignore="ImageContrastCheck" />
 
