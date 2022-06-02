@@ -6,12 +6,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,6 +27,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class AddGenres extends AppCompatActivity {
     //Declarations
@@ -61,6 +66,7 @@ public class AddGenres extends AppCompatActivity {
             public void onClick(View view)
             {
                 Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
                 startActivityForResult(intent, 3);
 
             }
@@ -94,12 +100,21 @@ public class AddGenres extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
-        super.onActivityResult(requestCode,resultCode,data);
-        if(resultCode == RESULT_OK && data != null)
-        {
-            Uri selectedImage = data.getData();
-            ivGenreIcon.setImageURI(selectedImage);
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 3 && resultCode == Activity.RESULT_OK) {
+            Uri contentUri = data.getData();
+            String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+            String imageFileName = "JPEG_" + timestamp + "." + getFileExt(contentUri);
+            Log.d("tag", "onActivityResult : Gallery Image Uri: " + imageFileName);
+            ivGenreIcon.setImageURI(contentUri);
         }
+    }
+
+    private String getFileExt(Uri contentUri)
+    {
+        ContentResolver c = getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(c.getType(contentUri));
     }
 
 

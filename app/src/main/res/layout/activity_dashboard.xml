@@ -53,6 +53,14 @@
                     app:titleTextColor="#000000"
                     tools:ignore="MissingConstraints" />
 
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="56dp"
+                    android:layout_height="55dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_profile" />
+
                 <LinearLayout
                     android:id="@+id/linearLayout3"
                     android:layout_width="410dp"
@@ -454,16 +462,6 @@
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
-
-                <ImageButton
-                    android:id="@+id/imageButton1"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:contentDescription="@string/profile"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/profile_icon"
-                    tools:ignore="ImageContrastCheck" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

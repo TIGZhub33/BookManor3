@@ -12,7 +12,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 public class DashBoard extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
@@ -21,9 +23,11 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggleOnOff;
     private NavigationView navigationView;
-    //private FloatingActionButton floatingAdd;
+    private FloatingActionButton floatingAdd;
+    private ImageButton imageButton;
 
     private Button buttonGenre, buttonFolder, buttonBooks;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +36,11 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
 
         toolbar = (Toolbar) findViewById(R.id.nav_toolbar);
 
+        floatingAdd = (FloatingActionButton) findViewById(R.id.floatingAddButton);
         buttonBooks = (Button) findViewById(R.id.button5);
         buttonGenre = (Button) findViewById(R.id.button3);
         buttonFolder = (Button) findViewById(R.id.button4);
+        imageButton = (ImageButton) findViewById(R.id.imageButton);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -48,6 +54,14 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
+
+        floatingAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(DashBoard.this, FloatingAdd.class));
+            }
+        });
 
         buttonBooks.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +84,15 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
             public void onClick(View view) {
 
                 startActivity(new Intent(DashBoard.this, ViewAllFolders.class));
+
+            }
+        });
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(DashBoard.this, Profile.class));
 
             }
         });
