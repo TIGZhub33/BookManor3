@@ -265,13 +265,7 @@ public class AddNewBook extends AppCompatActivity {
         }
          */
 
-        //Books book = new Books(cTitle, cAuthor, cIllustrator, cNoPages, cPageLastRead, cDateAdded);
 
-        //dbReference.push().setValue(book);
-
-        //Toast.makeText(AddNewBook.this, "Data inserted!  :)", Toast.LENGTH_SHORT).show();
-
-        //startActivity(new Intent(AddNewBook.this, ViewBooks.class));
 
         Books book = new Books(cTitle, cAuthor, cIllustrator, cNoPages, cPageLastRead, cDateAdded);
 

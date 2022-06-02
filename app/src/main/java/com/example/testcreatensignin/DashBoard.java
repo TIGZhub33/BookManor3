@@ -118,13 +118,15 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
                 startActivity(new Intent(this, ViewBooks.class));
                 break;
 
+                case R.id.nav_settings:
+                startActivity(new Intent(this, Settings.class));
+                break;
+
             case R.id.nav_help:
                 startActivity(new Intent(this, Help_Menu.class));
-
-            case R.id.nav_settings:
-                startActivity(new Intent(this, Settings.class));
-
                 break;
+
+
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;

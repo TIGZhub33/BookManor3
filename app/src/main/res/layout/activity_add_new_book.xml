@@ -173,11 +173,12 @@
                 android:layout_below="@+id/imgPlaceholder"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="#C5C7C9"
+                android:backgroundTint="#E1BEE7"
                 android:clickable="true"
                 android:enabled="true"
                 android:text="Insert Image"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                app:cornerRadius="10dp" />
 
             <TextView
                 android:id="@+id/txtNumberOfPages"
@@ -241,12 +242,10 @@
                 android:clickable="true"
                 android:enabled="true"
                 android:text="Add New Book"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                app:cornerRadius="10dp" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:layout_below="@+id/edtPageLastRead"/>
+
 
         </RelativeLayout>
 
