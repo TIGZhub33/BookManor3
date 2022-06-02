@@ -18,6 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class AddFolder extends AppCompatActivity {
 
+    private EditText folderName;
+
     private AutoCompleteTextView genreSelection;
     private String[] genres = {"Poetry", "Fiction", "Romance", "Comedy"};
     private Button addFolder;
@@ -31,10 +33,14 @@ public class AddFolder extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_folder);
 
+        folderName = (EditText) findViewById(R.id.edtFolderName);
+
         genreSelection = (AutoCompleteTextView) findViewById(R.id.autoTxtGenreSelection);
         addFolder = (Button) findViewById(R.id.newFolderButton);
 
         adapterItem1 = new ArrayAdapter<String>(this, R.layout.genre_item, genres);
+
+        genreSelection.setAdapter(adapterItem1);
 
         genreSelection.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -44,16 +50,16 @@ public class AddFolder extends AppCompatActivity {
                 Toast.makeText(AddFolder.this, "Genre " + genre, Toast.LENGTH_SHORT).show();
 
                 if(genre == "Poetry"){
-                    dbReference = FirebaseDatabase.getInstance().getReference("Genres/Poetry");
+                    dbReference = FirebaseDatabase.getInstance().getReference("Genres/Poetry/Folders");
                 }
                 if(genre == "Romance"){
-                    dbReference = FirebaseDatabase.getInstance().getReference("Genres/Romance");
+                    dbReference = FirebaseDatabase.getInstance().getReference("Genres/Romance/Folders");
                 }
                 if(genre == "Fiction"){
-                    dbReference = FirebaseDatabase.getInstance().getReference("Genres/Fiction");
+                    dbReference = FirebaseDatabase.getInstance().getReference("Genres/Fiction/Folders");
                 }
                 if(genre == "Comedy"){
-                    dbReference = FirebaseDatabase.getInstance().getReference("Genres/Comedy");
+                    dbReference = FirebaseDatabase.getInstance().getReference("Genres/Comedy/Folders");
                 }
             }
         });
@@ -70,22 +76,19 @@ public class AddFolder extends AppCompatActivity {
 
     public void addFolder() {
 
-        String cGenre = genreSelection.getText().toString();
+        //String cGenre = genreSelection.getText().toString();
 
+        String cFolderName = folderName.getText().toString();
 
-        if (cGenre.isEmpty()) {
-            genreSelection.setError("Genre selection is required!");
-            genreSelection.requestFocus();
-            return;
-        }
 
         //Folder folder = new Folder(cTitle, cAuthor, cIllustrator, cNoPages, cPageLastRead, cDateAdded);
+        Folders folder = new Folders(cFolderName);
 
-        //dbReference.push().setValue(folder);
+        dbReference.child(cFolderName).setValue(folder);
 
         Toast.makeText(AddFolder.this, "Data inserted!  :)", Toast.LENGTH_SHORT).show();
 
-        startActivity(new Intent(AddFolder.this, ViewAllFolders.class));
+        startActivity(new Intent(AddFolder.this, View_Folders_Test.class));
     }
 
 }

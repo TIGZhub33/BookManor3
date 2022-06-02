@@ -45,7 +45,7 @@ public class AddNewBook extends AppCompatActivity {
     private ImageView imageBook;
 
     private String[] genres = {"Poetry", "Fiction", "Romance", "Comedy"};
-    private String[] folders = {"Folder 1", "Folder 2", "Folder 3", "Folder 4"};
+    private String[] folders = {"2022", "Folder 2", "Folder 3", "Folder 4"};
 
     private ArrayAdapter<String> adapterItem1;
     private ArrayAdapter<String> adapterItem2;
@@ -78,7 +78,9 @@ public class AddNewBook extends AppCompatActivity {
         genreSelection.setAdapter(adapterItem1);
         folderSelection.setAdapter(adapterItem2);
 
-        dbReference = FirebaseDatabase.getInstance().getReference("Folder/Genres/Poetry/Books");
+        //dbReference = FirebaseDatabase.getInstance().getReference("Genres/Folders/Books");
+
+        //dbReference = FirebaseDatabase.getInstance().getReference("Books");
         //dbReferencePoetry = FirebaseDatabase.getInstance().getReference("Genres/Poetry/Books");
         //dbReferenceRomance = FirebaseDatabase.getInstance().getReference("Genres/Romance/Books");
         //dbReferenceFiction = FirebaseDatabase.getInstance().getReference("Genres/Fiction/Books");
@@ -92,7 +94,6 @@ public class AddNewBook extends AppCompatActivity {
                 Toast.makeText(AddNewBook.this, "Genre " + genre, Toast.LENGTH_SHORT).show();
 
 
-                /*
                 if(genre == "Poetry"){
                     dbReference = FirebaseDatabase.getInstance().getReference("Genres/Poetry/Books");
                 }
@@ -105,8 +106,6 @@ public class AddNewBook extends AppCompatActivity {
                 if(genre == "Comedy"){
                     dbReference = FirebaseDatabase.getInstance().getReference("Genres/Comedy/Books");
                 }
-                 */
-
 
             }
         });
@@ -117,6 +116,21 @@ public class AddNewBook extends AppCompatActivity {
 
                 String folder = adapterView.getItemAtPosition(i).toString();
                 Toast.makeText(AddNewBook.this, "Folder " + folder, Toast.LENGTH_SHORT).show();
+
+
+                if(folder == "2022"){
+                    dbReference = FirebaseDatabase.getInstance().getReference("Genres/Poetry/Folders/2022/Books");
+                }
+                if(folder == "Romance"){
+                    dbReference = FirebaseDatabase.getInstance().getReference("Genres/Romance/Books");
+                }
+                if(folder == "Fiction"){
+                    dbReference = FirebaseDatabase.getInstance().getReference("Genres/Fiction/Books");
+                }
+                if(folder == "Comedy"){
+                    dbReference = FirebaseDatabase.getInstance().getReference("Genres/Comedy/Books");
+                }
+
             }
         });
 
@@ -265,11 +279,10 @@ public class AddNewBook extends AppCompatActivity {
         }
          */
 
-
-
         Books book = new Books(cTitle, cAuthor, cIllustrator, cNoPages, cPageLastRead, cDateAdded);
 
-        dbReference.push().setValue(book);
+        //dbReference.push().setValue(book);
+        dbReference.child(cTitle).setValue(book);
 
         Toast.makeText(AddNewBook.this, "Data inserted!  :)", Toast.LENGTH_SHORT).show();
 

@@ -6,11 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
@@ -22,42 +18,38 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewBooks extends AppCompatActivity {
+public class View_Folders_Test extends AppCompatActivity {
+
+    private FloatingActionButton addFolder;
 
     private ListView testList;
-    private List<Books> bookList;
-
-    private FloatingActionButton addBook;
+    private List<Folders> folderList;
 
     private DatabaseReference reference;
-
-    private TextView test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_books);
+        setContentView(R.layout.activity_view_folders_test);
 
-        testList = (ListView) findViewById(R.id.lstBooks);
-        bookList = new ArrayList<>();
+        testList = (ListView) findViewById(R.id.lstFolders);
+        folderList = new ArrayList<>();
 
-        addBook = (FloatingActionButton) findViewById(R.id.floatingAddButton);
-
-        reference = FirebaseDatabase.getInstance().getReference("Genres/Poetry/Folders/2022/Books");
+        reference = FirebaseDatabase.getInstance().getReference("Genres/Poetry/Folders");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                bookList.clear();
+                folderList.clear();
 
-                for (DataSnapshot bookSnapshot : snapshot.getChildren()){
+                for (DataSnapshot folderSnapshot : snapshot.getChildren()){
 
-                    Books books = bookSnapshot.getValue(Books.class);
-                    bookList.add(books);
+                    Folders folders = folderSnapshot.getValue(Folders.class);
+                    folderList.add(folders);
                 }
 
-                BookAdapter adapter = new BookAdapter(ViewBooks.this, bookList);
+                FolderAdapter adapter = new FolderAdapter(View_Folders_Test.this, folderList);
                 testList.setAdapter(adapter);
             }
 
@@ -67,11 +59,14 @@ public class ViewBooks extends AppCompatActivity {
             }
         });
 
-        addBook.setOnClickListener(new View.OnClickListener() {
+
+        addFolder = (FloatingActionButton) findViewById(R.id.floatingAddButton);
+
+        addFolder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(ViewBooks.this, AddNewBook.class));
+                startActivity(new Intent(View_Folders_Test.this, AddFolder.class));
             }
         });
     }

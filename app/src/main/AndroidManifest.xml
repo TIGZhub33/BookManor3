@@ -15,6 +15,12 @@
         android:theme="@style/Theme.TestCreateNSignIn">
 
         <activity
+            android:name=".View_Folders_Test"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPoetryGenre"
+            android:exported="false" />
+        <activity
             android:name=".Contact_Us"
             android:exported="false" />
         <activity

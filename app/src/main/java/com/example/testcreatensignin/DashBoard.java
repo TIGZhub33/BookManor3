@@ -12,7 +12,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 public class DashBoard extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
@@ -21,7 +23,8 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggleOnOff;
     private NavigationView navigationView;
-    //private FloatingActionButton floatingAdd;
+    private FloatingActionButton floatingAdd;
+    private ImageButton profileButton;
 
     private Button buttonGenre, buttonFolder, buttonBooks;
 
@@ -35,6 +38,8 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
         buttonBooks = (Button) findViewById(R.id.button5);
         buttonGenre = (Button) findViewById(R.id.button3);
         buttonFolder = (Button) findViewById(R.id.button4);
+
+        profileButton = (ImageButton) findViewById(R.id.imgbtnProfile);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -61,7 +66,7 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(DashBoard.this, ViewGenres.class));
+                startActivity(new Intent(DashBoard.this, ViewPoetryGenre.class));
             }
         });
 
@@ -69,20 +74,29 @@ public class DashBoard extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(DashBoard.this, ViewAllFolders.class));
+                startActivity(new Intent(DashBoard.this, View_Folders_Test.class));
 
             }
         });
 
-        //floatingAdd = (FloatingActionButton) findViewById(R.id.floatingAddButton);
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        //floatingAdd.setOnClickListener(new View.OnClickListener() {
-            //@Override
-           // public void onClick(View view) {
+                startActivity(new Intent(DashBoard.this, Profile.class));
 
-                //startActivity(new Intent(DashBoard.this, FloatingAdd.class));
-           // }
-        //});
+            }
+        });
+
+        floatingAdd = (FloatingActionButton) findViewById(R.id.floatingAddButton);
+
+        floatingAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(DashBoard.this, FloatingAdd.class));
+            }
+        });
 
     }
 

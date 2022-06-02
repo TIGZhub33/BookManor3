@@ -27,7 +27,8 @@ public class AddGenres extends AppCompatActivity {
     DatabaseReference databaseReference;
     GenreInfo genreInfo;
     String customGenreName, booksGoalS;
-    int booksGoal;
+    //int booksGoal;
+    String booksGoal;
     private Bitmap icon;
 
     //private String[] genres = {"Poetry", "Fiction", "Romance", "Comedy"};
@@ -45,7 +46,8 @@ public class AddGenres extends AppCompatActivity {
         insertIconButton = (Button) findViewById(R.id.genreIconButton);
         createGenreButton = (Button) findViewById(R.id.createGenreButton);
 
-        dbReference = FirebaseDatabase.getInstance().getReference("GenreInfo");
+        //dbReference = FirebaseDatabase.getInstance().getReference("GenreInfo");
+        dbReference = FirebaseDatabase.getInstance().getReference("Genres");
 
         ivGenreIcon = (ImageView) findViewById(R.id.genreIconImageView);
 
@@ -77,9 +79,11 @@ public class AddGenres extends AppCompatActivity {
                 }
                 else
                 {
-                    booksGoal = Integer.parseInt(booksGoalS);
+                    //booksGoal = Integer.parseInt(booksGoalS);
                     createNewGenre();
-                    startActivity(new Intent(AddGenres.this, ViewGenres.class));
+
+                    //startActivity(new Intent(AddGenres.this, ViewGenres.class));
+                    startActivity(new Intent(AddGenres.this, ViewPoetryGenre.class));
                 }
             }
         });
@@ -121,10 +125,17 @@ public class AddGenres extends AppCompatActivity {
 
     public void createNewGenre(){
 
-        customGenreName = etGenreName.getText().toString();
-        booksGoal = Integer.parseInt(etNoBooksGoal.getText().toString());
-        GenreInfo genre = new GenreInfo(customGenreName, booksGoal, ivGenreIcon);
-        dbReference.push().setValue(genre);
+        String customGenreName = etGenreName.getText().toString();
+        //int booksGoal = Integer.parseInt(etNoBooksGoal.getText().toString());
+        int booksGoal = Integer.parseInt(etNoBooksGoal.getText().toString());
+
+        //GenreInfo genre = new GenreInfo(customGenreName, booksGoal, ivGenreIcon);
+        GenreInfo genre = new GenreInfo(customGenreName, booksGoal);
+
+        //dbReference.push().setValue(genre);
+        dbReference.child(customGenreName).setValue(genre);
+
+        //dbReference.child(cTitle).setValue(book);
 
         Toast.makeText(AddGenres.this, "Genre created successfully!", Toast.LENGTH_SHORT).show();
 
