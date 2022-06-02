@@ -67,7 +67,8 @@
                         android:fontFamily="@font/alata"
                         android:text="@string/genre_icon"
                         android:textColor="@color/black"
-                        app:backgroundTint="@android:color/system_neutral1_200"
+                        app:backgroundTint="#E1BEE7"
+                        app:cornerRadius="10dp"
                         tools:targetApi="s" />
 
                     <ImageView
@@ -116,19 +117,20 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="53dp"
+                android:layout_marginTop="90dp"
                 android:orientation="vertical">
 
                 <Button
                     android:id="@+id/createGenreButton"
                     android:layout_width="229dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="70dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
                     android:fontFamily="@font/alata"
                     android:text="@string/create_genre"
                     android:textColor="@color/black"
-                    app:backgroundTint="@android:color/system_neutral1_200"
+                    app:backgroundTint="#C5CAE9"
+                    app:cornerRadius="10dp"
                     tools:targetApi="s" />
 
             </LinearLayout>
@@ -136,28 +138,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="20dp">
-
-                <TextView
-                    android:id="@+id/newFolderTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="20dp"
-                    android:fontFamily="@font/alata"
-                    android:text="@string/new_folder_in_genre"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:id="@+id/addFolderInGenreButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="270dp"
-                    android:text="@string/add"
-                    android:textColor="@color/black"
-                    app:backgroundTint="@android:color/system_neutral1_200"
-                    tools:targetApi="s" />
-            </RelativeLayout>
+                android:layout_marginTop="20dp"/>
 
 
         </LinearLayout>

@@ -21,7 +21,6 @@ public class AddFolder extends AppCompatActivity {
     private AutoCompleteTextView genreSelection;
     private String[] genres = {"Poetry", "Fiction", "Romance", "Comedy"};
     private Button addFolder;
-    private EditText folderName;
 
     private ArrayAdapter<String> adapterItem1;
 
@@ -33,7 +32,6 @@ public class AddFolder extends AppCompatActivity {
         setContentView(R.layout.activity_add_folder);
 
         genreSelection = (AutoCompleteTextView) findViewById(R.id.autoTxtGenreSelection);
-        folderName = (EditText) findViewById(R.id.customFolderName);
         addFolder = (Button) findViewById(R.id.newFolderButton);
 
         adapterItem1 = new ArrayAdapter<String>(this, R.layout.genre_item, genres);
@@ -73,13 +71,7 @@ public class AddFolder extends AppCompatActivity {
     public void addFolder() {
 
         String cGenre = genreSelection.getText().toString();
-        String cFolderName = folderName.getText().toString();
 
-        if (cFolderName.isEmpty()) {
-            folderName.setError("Title is required!");
-            folderName.requestFocus();
-            return;
-        }
 
         if (cGenre.isEmpty()) {
             genreSelection.setError("Genre selection is required!");

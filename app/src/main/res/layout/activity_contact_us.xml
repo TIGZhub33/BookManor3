@@ -49,9 +49,12 @@
 
                         <EditText
                             android:id="@+id/edtContact"
-                            android:layout_margin="5dp"
                             android:layout_width="355dp"
                             android:layout_height="66dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
                             android:fontFamily="@font/alata"
                             android:hint="Tell us how we can help"
                             android:inputType="text"
@@ -71,10 +74,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
+                        android:backgroundTint="#C5CAE9"
                         android:fontFamily="@font/alata"
                         android:text="Send Email"
                         android:textColor="@color/black"
-                        android:backgroundTint="#C5C5C5"/>
+                        app:cornerRadius="10dp" />
 
                 </RelativeLayout>
 
