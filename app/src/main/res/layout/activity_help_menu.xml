@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/appColor"
+            android:clickable="true"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             app:navigationIcon="?attr/actionModeCloseDrawable"
@@ -27,7 +28,8 @@
             app:titleMargin="10dp"
             app:titleMarginStart="70dp"
             app:titleTextColor="@color/black"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:focusable="true" />
 
 
         <LinearLayout

@@ -18,6 +18,7 @@
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar3"
+                android:clickable="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/appColor"
@@ -28,7 +29,8 @@
                 app:title="@string/add_genres"
                 app:titleMargin="10dp"
                 app:titleMarginStart="100dp"
-                app:titleTextColor="@color/black" />
+                app:titleTextColor="@color/black"
+                android:focusable="true" />
 
             <LinearLayout
                 android:layout_width="match_parent"

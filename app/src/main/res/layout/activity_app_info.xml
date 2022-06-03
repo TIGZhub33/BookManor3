@@ -10,6 +10,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar7"
         android:layout_width="409dp"
+        android:clickable="true"
         android:layout_height="wrap_content"
         android:background="@color/appColor"
         android:minHeight="?attr/actionBarSize"
@@ -21,7 +22,8 @@
         app:navigationIcon="?attr/actionModeCloseDrawable"
         app:title="@string/APP_INFO"
         app:titleMarginStart="100dp"
-        app:titleTextColor="@color/black" />
+        app:titleTextColor="@color/black"
+        android:focusable="true" />
 
     <LinearLayout
         android:id="@+id/linearLayout17"

@@ -12,6 +12,7 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar3"
+            android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/appColor"
@@ -22,7 +23,8 @@
             app:titleMargin="10dp"
             app:titleMarginStart="90dp"
             app:titleTextColor="@color/black"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:focusable="true" />
 
         <LinearLayout
             android:id="@+id/linear1"
@@ -201,7 +203,8 @@
                     android:clickable="true"
                     android:enabled="true"
                     android:text="insert images"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:focusable="true" />
 
                 <Button
                     android:id="@+id/btnShare"
@@ -213,7 +216,8 @@
                     android:clickable="true"
                     android:enabled="true"
                     android:text="share"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:focusable="true" />
 
                 <Button
                     android:id="@+id/btnSaveAs"
@@ -226,7 +230,8 @@
                     android:clickable="true"
                     android:enabled="true"
                     android:text="save as"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:focusable="true" />
 
             </RelativeLayout>
 

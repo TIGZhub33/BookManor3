@@ -11,6 +11,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/all_foldersToolbar"
         android:layout_width="match_parent"
+        android:clickable="true"
         android:layout_height="wrap_content"
         android:background="@color/appColor"
         android:minHeight="?attr/actionBarSize"
@@ -21,7 +22,8 @@
         app:navigationIcon="@drawable/ic_back_icon"
         app:title="@string/all_folders"
         app:titleMarginStart="100dp"
-        app:titleTextColor="#000000" />
+        app:titleTextColor="#000000"
+        android:focusable="true" />
 
     <!--Scroll View-->
     <ScrollView

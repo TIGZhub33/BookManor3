@@ -10,6 +10,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar6"
         android:layout_width="409dp"
+        android:clickable="true"
         android:layout_height="wrap_content"
         android:background="@color/appColor"
         android:minHeight="?attr/actionBarSize"
@@ -22,7 +23,8 @@
         app:layout_constraintVertical_bias="0.0"
         app:navigationIcon="?attr/actionModeCloseDrawable"
         app:title="@string/PROGRESS_NOTIFICATIONS"
-        app:titleTextColor="@color/black" />
+        app:titleTextColor="@color/black"
+        android:focusable="true" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"

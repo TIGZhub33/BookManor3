@@ -9,6 +9,7 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/addToolbar3"
+        android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/appColor"
@@ -21,7 +22,8 @@
         app:navigationIcon="@drawable/ic_back_icon"
         app:title="Profile"
         app:titleMarginStart="100dp"
-        app:titleTextColor="#000000" />
+        app:titleTextColor="#000000"
+        android:focusable="true" />
 
     <ScrollView
         android:id="@+id/scrollView3"

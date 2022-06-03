@@ -14,6 +14,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
+            android:clickable="true"
             android:layout_height="wrap_content"
             android:background="@color/appColor"
             android:minHeight="?attr/actionBarSize"
@@ -23,7 +24,8 @@
             app:titleMargin="10dp"
             app:titleMarginStart="140dp"
             app:titleTextColor="@color/black"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:focusable="true" />
 
         <ScrollView
             android:id="@+id/scrollV"

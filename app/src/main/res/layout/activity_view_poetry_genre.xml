@@ -9,6 +9,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
         android:layout_width="0dp"
+        android:clickable="true"
         android:layout_height="wrap_content"
         android:background="@color/appColor"
         android:minHeight="?attr/actionBarSize"
@@ -20,7 +21,8 @@
         app:titleMargin="10dp"
         app:titleMarginStart="200dp"
         app:titleTextColor="@color/black"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:focusable="true" />
 
     <ImageButton
         android:id="@+id/imgBtnBack"
