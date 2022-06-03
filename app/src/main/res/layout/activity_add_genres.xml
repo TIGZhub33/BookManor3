@@ -48,7 +48,7 @@
                     android:fontFamily="@font/alata"
                     android:hint="@string/custom_genre_name"
                     android:inputType="textPersonName"
-                    android:textColorHint="#757575" />
+                    android:textColorHint="#616161" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -67,15 +67,17 @@
                         android:fontFamily="@font/alata"
                         android:text="@string/genre_icon"
                         android:textColor="@color/black"
-                        app:backgroundTint="@android:color/system_neutral1_200"
+                        app:backgroundTint="#E1BEE7"
+                        app:cornerRadius="10dp"
                         tools:targetApi="s" />
 
                     <ImageView
                         android:id="@+id/genreIconImageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="7dp"
+                        android:layout_marginEnd="33dp"
+                        android:scaleType="fitXY"
                         android:contentDescription="@string/genre_img_content_description"
                         app:srcCompat="@android:drawable/gallery_thumb"
                         tools:ignore="ImageContrastCheck" />
@@ -110,24 +112,25 @@
                     android:fontFamily="@font/alata"
                     android:hint="@string/num_books_hint"
                     android:inputType="number"
-                    android:textColorHint="#757575" />
+                    android:textColorHint="#616161" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="176dp"
                 android:orientation="vertical">
 
                 <Button
                     android:id="@+id/createGenreButton"
                     android:layout_width="229dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="70dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
                     android:fontFamily="@font/alata"
                     android:text="@string/create_genre"
                     android:textColor="@color/black"
-                    app:backgroundTint="@android:color/system_neutral1_200"
+                    app:backgroundTint="#C5CAE9"
+                    app:cornerRadius="10dp"
                     tools:targetApi="s" />
 
             </LinearLayout>
@@ -154,7 +157,8 @@
                     android:layout_marginStart="270dp"
                     android:text="@string/add"
                     android:textColor="@color/black"
-                    app:backgroundTint="@android:color/system_neutral1_200"
+                    app:backgroundTint="@color/appColor"
+                    app:cornerRadius="10dp"
                     tools:targetApi="s" />
             </RelativeLayout>
 

@@ -55,7 +55,8 @@
                         android:layout_marginStart="130dp"
                         android:layout_weight="1"
                         android:fontFamily="@font/alata"
-                        android:text="@string/view_by" />
+                        android:text="@string/view_by"
+                        android:textColor="#616161" />
                 </LinearLayout>
 
                 <!--2 BUTTONS-->

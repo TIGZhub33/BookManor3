@@ -34,204 +34,210 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardA3"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:clickable="true"
+                    android:focusable="true">
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardQ1"
-                        android:layout_width="380dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="10dp"
-                        android:clickable="true">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/textA3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/alata"
+                            android:text="@string/in_your_book_you_would_like_to_share_at_the_bottom_you_will_find_the_share_button_alternatively_you_can_select_your_book_in_the_books_section"
+                            android:textSize="16sp" />
 
-                            <TextView
-                                android:id="@+id/textQ1"
-                                android:layout_centerInParent="true"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/alata"
-                                android:text="Q. Where can I add a profile?"
-                                android:textColor="@color/black"
-                                android:textSize="20sp" />
+                    </RelativeLayout>
 
-                        </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
-                    </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardQ2"
+                    android:layout_width="380dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:clickable="true"
+                    android:focusable="true">
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardA1"
-                        android:layout_width="360dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/cardQ1"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:clickable="true">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="10dp">
+                        <TextView
+                            android:id="@+id/textQ2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/alata"
+                            android:text="@string/q_where_do_i_add_a_book"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
 
-                            <TextView
-                                android:id="@+id/textA1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="5dp"
-                                android:fontFamily="@font/alata"
-                                android:text="Home screen > profile icon > update details"
-                                android:textSize="16sp" />
+                    </RelativeLayout>
 
-                            <TextView
-                                android:id="@+id/textA11"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/textA1"
-                                android:layout_margin="5dp"
-                                android:fontFamily="@font/alata"
-                                android:text="Home screen > menu button > profile > add profile picture"
-                                android:textSize="16sp" />
+                </androidx.cardview.widget.CardView>
 
-                            <TextView
-                                android:id="@+id/textA12"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/textA11"
-                                android:layout_margin="5dp"
-                                android:fontFamily="@font/alata"
-                                android:text="Home screen > settings > manage account > add profile picture"
-                                android:textSize="16sp" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardQ1"
+                    android:layout_width="380dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textQ1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/alata"
+                            android:text="@string/q_where_can_i_add_a_profile"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardA1"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp">
+
+                        <TextView
+                            android:id="@+id/textA1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/alata"
+                            android:text="@string/home_screen_profile_icon_update_details"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/textA11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textA1"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/alata"
+                            android:text="@string/home_screen_menu_button_profile_add_profile_picture"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/textA12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textA11"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/alata"
+                            android:text="@string/home_screen_settings_manage_account_add_profile_picture"
+                            android:textSize="16sp" />
 
 
-                        </RelativeLayout>
+                    </RelativeLayout>
 
-                    </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardQ2"
-                        android:layout_below="@+id/cardA1"
-                        android:layout_width="380dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="10dp"
-                        android:clickable="true">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardA2"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:clickable="true"
+                    android:focusable="true">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp">
 
-                            <TextView
-                                android:id="@+id/textQ2"
-                                android:layout_centerInParent="true"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/alata"
-                                android:text="Q. Where do I add a book?"
-                                android:textColor="@color/black"
-                                android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/textA2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/alata"
+                            android:text="@string/home_screen_plus_icon_button_add_book"
+                            android:textSize="16sp" />
 
-                        </RelativeLayout>
+                    </RelativeLayout>
 
-                    </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardA2"
-                        android:layout_width="360dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/cardQ2"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:clickable="true">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardQ3"
+                    android:layout_width="380dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:clickable="true"
+                    android:focusable="true">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="10dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                            <TextView
-                                android:id="@+id/textA2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="5dp"
-                                android:fontFamily="@font/alata"
-                                android:text="Home screen > plus icon button > add book"
-                                android:textSize="16sp" />
+                        <TextView
+                            android:id="@+id/textQ3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/alata"
+                            android:text="@string/q_how_can_i_share_my_book_notes"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
 
-                        </RelativeLayout>
+                    </RelativeLayout>
 
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardQ3"
-                        android:layout_below="@+id/cardA2"
-                        android:layout_width="380dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="10dp"
-                        android:clickable="true">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <TextView
-                                android:id="@+id/textQ3"
-                                android:layout_centerInParent="true"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/alata"
-                                android:text="Q. How can I share my book notes?"
-                                android:textColor="@color/black"
-                                android:textSize="20sp" />
-
-                        </RelativeLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardA3"
-                        android:layout_width="360dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/cardQ3"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:clickable="true">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="10dp">
-
-                            <TextView
-                                android:id="@+id/textA3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="5dp"
-                                android:fontFamily="@font/alata"
-                                android:text="In your book you would like to share at the bottom you will find the share button. Alternatively you can select your book in the books section"
-                                android:textSize="16sp" />
-
-                        </RelativeLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                </RelativeLayout>
-
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
-
         </ScrollView>
 
     </RelativeLayout>

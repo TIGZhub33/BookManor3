@@ -55,7 +55,8 @@
                         android:id="@+id/profilePhoto"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        tools:srcCompat="@tools:sample/avatars" />
+                        tools:srcCompat="@tools:sample/avatars"
+                        android:contentDescription="@string/profile_photo" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -124,11 +125,11 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="10dp"
-                    android:drawableStart="@drawable/ic_baseline_favorite_24"
                     android:fontFamily="@font/alata"
                     android:text="@string/favourites"
                     android:textColor="#000000"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    app:drawableStartCompat="@drawable/ic_baseline_favorite_24" />
             </LinearLayout>
 
             <LinearLayout
@@ -156,11 +157,11 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="10dp"
-                    android:drawableStart="@drawable/ic_baseline_category_24"
                     android:fontFamily="@font/alata"
-                    android:text="CATEGORIES"
+                    android:text="@string/categories"
                     android:textColor="#000000"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    app:drawableStartCompat="@drawable/ic_baseline_category_24" />
             </LinearLayout>
 
             <LinearLayout

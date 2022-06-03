@@ -118,7 +118,8 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         app:cardCornerRadius="10dp"
-                        app:cardElevation="8dp">
+                        app:cardElevation="8dp"
+                        android:focusable="true">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -132,7 +133,7 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginTop="-7dp"
                                 android:layout_marginEnd="260dp"
-                                android:contentDescription="genre_icon2"
+                                android:contentDescription="@string/genre_icon2"
                                 app:srcCompat="@drawable/fiction_icon"
                                 tools:ignore="ImageContrastCheck" />
 
@@ -168,13 +169,14 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/comedyCardView"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:clickable="true"
                         app:cardCornerRadius="10dp"
-                        app:cardElevation="8dp">
+                        app:cardElevation="8dp"
+                        android:focusable="true">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -192,7 +194,7 @@
                                 android:layout_marginTop="30dp"
                                 android:layout_marginEnd="250dp"
                                 android:layout_marginBottom="29dp"
-                                android:contentDescription="genre_icon3"
+                                android:contentDescription="@string/genre_icon3"
                                 app:srcCompat="@drawable/humor_icon" />
 
                             <TextView
@@ -227,13 +229,14 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/romanceCardView"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:clickable="true"
                         app:cardCornerRadius="10dp"
-                        app:cardElevation="8dp">
+                        app:cardElevation="8dp"
+                        android:focusable="true">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -247,7 +250,7 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginEnd="259dp"
-                                android:contentDescription="genre_icon3"
+                                android:contentDescription="@string/genre_icon3"
                                 app:srcCompat="@drawable/love_icon" />
 
                             <TextView
@@ -293,7 +296,8 @@
                 android:keepScreenOn="true"
                 app:backgroundTint="@color/appColor"
                 app:srcCompat="@android:drawable/ic_input_add"
-                tools:ignore="ImageContrastCheck" />
+                tools:ignore="ImageContrastCheck,RtlHardcoded"
+                android:focusable="true" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

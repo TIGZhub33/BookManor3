@@ -32,57 +32,48 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardTell"
-                    android:layout_width="380dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:clickable="true">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <EditText
-                            android:id="@+id/edtContact"
-                            android:layout_width="355dp"
-                            android:layout_height="66dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:fontFamily="@font/alata"
-                            android:hint="Tell us how we can help"
-                            android:inputType="text"
-                            android:textColorHint="#757575" />
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardTell"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/cardTell">
+                    android:layout_height="match_parent">
 
-                    <Button
-                        android:id="@+id/btnSendEmail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:backgroundTint="#C5CAE9"
+                    <EditText
+                        android:id="@+id/edtContact"
+                        android:layout_width="355dp"
+                        android:layout_height="66dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
                         android:fontFamily="@font/alata"
-                        android:text="Send Email"
-                        android:textColor="@color/black"
-                        app:cornerRadius="10dp" />
+                        android:hint="@string/tell_us_how_we_can_help"
+                        android:inputType="text"
+                        android:textColorHint="#757575" />
 
                 </RelativeLayout>
 
-            </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnSendEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#C5CAE9"
+                android:fontFamily="@font/alata"
+                android:text="@string/send_email"
+                android:textColor="@color/black"
+                app:cornerRadius="10dp" />
 
         </LinearLayout>
 

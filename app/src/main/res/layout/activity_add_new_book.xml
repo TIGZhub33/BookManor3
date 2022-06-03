@@ -35,9 +35,9 @@
                 android:id="@+id/txtBookTitle"
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:fontFamily="@font/alata"
-                android:text="Book Title: "
+                android:text="@string/book_title"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -45,22 +45,22 @@
                 android:id="@+id/edtBookTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/txtBookTitle"
-                android:layout_weight="1"
+                android:layout_toEndOf="@id/txtBookTitle"
                 android:ems="10"
                 android:fontFamily="@font/alata"
                 android:inputType="textPersonName"
-                android:textColorHint="#757575" />
+                android:textColorHint="#757575"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/txtAuthor"
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtBookTitle"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/alata"
-                android:text="Author: "
+                android:text="@string/author"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -69,57 +69,57 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/edtBookTitle"
-                android:layout_toRightOf="@+id/txtAuthor"
-                android:layout_weight="1"
+                android:layout_toEndOf="@+id/txtAuthor"
                 android:ems="10"
                 android:fontFamily="@font/alata"
                 android:inputType="textPersonName"
-                android:textColorHint="#757575" />
+                android:textColorHint="#757575"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/txtIllustrator"
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtAuthor"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/alata"
-                android:text="Illustrator: "
+                android:text="@string/illustrator"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/edtIllustrator"
-                android:layout_toRightOf="@+id/txtIllustrator"
-                android:layout_below="@id/edtAuthor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_below="@id/edtAuthor"
+                android:layout_toEndOf="@+id/txtIllustrator"
                 android:ems="10"
                 android:fontFamily="@font/alata"
                 android:inputType="textPersonName"
-                android:textColorHint="#757575"/>
+                android:textColorHint="#757575"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/txtSelectGenre"
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtIllustrator"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/alata"
-                android:text="Genre: "
+                android:text="@string/genre"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtGenre"
                 android:layout_below="@+id/edtIllustrator"
-                android:layout_toRightOf="@+id/txtSelectGenre"
+                android:layout_toEndOf="@+id/txtSelectGenre"
                 android:layout_marginTop="10dp"
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
-                android:hint="Select Genre"
+                android:hint="@string/select_genre_drop"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
                 <AutoCompleteTextView
                     android:id="@+id/autoTxtGenreSelection"
@@ -133,21 +133,21 @@
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtSelectGenre"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/alata"
-                android:text="Folder: "
+                android:text="@string/folder"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtFolder"
-                android:layout_toRightOf="@+id/txtSelectGenre"
+                android:layout_toEndOf="@+id/txtSelectGenre"
                 android:layout_below="@id/txtGenre"
                 android:layout_marginTop="10dp"
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
-                android:hint="Select Folder"
+                android:hint="@string/select_folder"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
                 <AutoCompleteTextView
                     android:id="@+id/autoTxtFolderSelection"
@@ -176,19 +176,20 @@
                 android:backgroundTint="#E1BEE7"
                 android:clickable="true"
                 android:enabled="true"
-                android:text="Insert Image"
+                android:text="@string/insert_image"
                 android:textColor="#000000"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="10dp"
+                android:focusable="true" />
 
             <TextView
                 android:id="@+id/txtNumberOfPages"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/btnInsertImage"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/alata"
-                android:text="Number of pages: "
+                android:text="@string/number_of_pages"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -198,22 +199,22 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/btnInsertImage"
                 android:layout_marginTop="15dp"
-                android:layout_toRightOf="@+id/txtNumberOfPages"
-                android:layout_weight="1"
+                android:layout_toEndOf="@+id/txtNumberOfPages"
                 android:ems="10"
                 android:fontFamily="@font/alata"
                 android:inputType="number"
-                android:textColorHint="#757575" />
+                android:textColorHint="#757575"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/txtPageLastRead"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtNumberOfPages"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/alata"
-                android:text="Page number last read:"
+                android:text="@string/page_number_last_read"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -222,13 +223,13 @@
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/edtNumberOfPages"
-                android:layout_toRightOf="@id/txtPageLastRead"
                 android:layout_marginTop="10dp"
-                android:layout_weight="1"
+                android:layout_toEndOf="@id/txtPageLastRead"
                 android:ems="10"
                 android:fontFamily="@font/alata"
                 android:inputType="number"
-                android:textColorHint="#757575" />
+                android:textColorHint="#757575"
+                tools:ignore="SpeakableTextPresentCheck" />
 
 
             <Button
@@ -241,9 +242,10 @@
                 android:backgroundTint="#C5CAE9"
                 android:clickable="true"
                 android:enabled="true"
-                android:text="Add New Book"
+                android:text="@string/add_new_book"
                 android:textColor="#000000"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="10dp"
+                android:focusable="true" />
 
 
 

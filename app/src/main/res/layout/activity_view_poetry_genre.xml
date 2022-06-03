@@ -6,14 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ViewPoetryGenre">
 
-    <ImageButton
-        android:id="@+id/imgBtnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_back_icon"
-        tools:ignore="MissingConstraints"
-        android:outlineAmbientShadowColor="@color/black"/>
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
         android:layout_width="0dp"
@@ -28,6 +20,16 @@
         app:titleMargin="10dp"
         app:titleMarginStart="200dp"
         app:titleTextColor="@color/black"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/imgBtnBack"
+        android:layout_width="54dp"
+        android:layout_height="55dp"
+        android:outlineAmbientShadowColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back_icon"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
@@ -50,7 +52,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp"
-                android:clickable="true">
+                android:clickable="true"
+                android:focusable="true">
 
             </ListView>
 

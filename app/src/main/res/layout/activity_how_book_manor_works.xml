@@ -32,107 +32,109 @@
             android:layout_below="@+id/toolbar"
             android:orientation="vertical">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardDownload"
+                android:layout_width="380dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:focusable="true">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardDownload"
-                    android:layout_width="380dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="10dp"
-                    android:clickable="true">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/textDownload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/alata"
+                        android:text="@string/download_user_manual"
+                        android:textColor="#43A6C6"
+                        android:textSize="20sp"
+                        tools:ignore="TextContrastCheck" />
 
-                        <TextView
-                            android:id="@+id/textDownload"
-                            android:layout_centerInParent="true"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
-                            android:text="Download User Manual"
-                            android:textColor="#43A6C6"
-                            android:textSize="20sp" />
+                </RelativeLayout>
 
-                    </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
-                </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardInstructions"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:focusable="true">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardInstructions"
-                    android:layout_below="@+id/cardDownload"
-                    android:layout_width="380dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:clickable="true">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/textInstr1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:fontFamily="@font/alata"
+                        android:text="@string/_1_create_a_custom_category_or_use_a_default_category"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/textInstr1"
-                            android:layout_margin="15dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
-                            android:text="1. Create a custom category or use a default category."
-                            android:textColor="@color/black"
-                            android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/textInstr2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textInstr1"
+                        android:layout_margin="15dp"
+                        android:fontFamily="@font/alata"
+                        android:text="@string/_2_add_folders_within_that_category"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/textInstr2"
-                            android:layout_below="@id/textInstr1"
-                            android:layout_margin="15dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
-                            android:text="2. Add folders within that category."
-                            android:textColor="@color/black"
-                            android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/textInstr3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textInstr2"
+                        android:layout_margin="15dp"
+                        android:fontFamily="@font/alata"
+                        android:text="@string/_3_add_books_in_the_folder"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/textInstr3"
-                            android:layout_below="@id/textInstr2"
-                            android:layout_margin="15dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
-                            android:text="3. Add books in the folder."
-                            android:textColor="@color/black"
-                            android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/textInstr4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textInstr3"
+                        android:layout_margin="15dp"
+                        android:fontFamily="@font/alata"
+                        android:text="@string/_4_make_notes_about_the_book_and_organise"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/textInstr4"
-                            android:layout_below="@id/textInstr3"
-                            android:layout_margin="15dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
-                            android:text="4. Make notes about the book and organise."
-                            android:textColor="@color/black"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/textInstr5"
-                            android:layout_below="@id/textInstr4"
-                            android:layout_margin="15dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
-                            android:text="5. Organise your books in folders and categories."
-                            android:textColor="@color/black"
-                            android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/textInstr5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textInstr4"
+                        android:layout_margin="15dp"
+                        android:fontFamily="@font/alata"
+                        android:text="@string/_5_organise_your_books_in_folders_and_categories"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
 
-                    </RelativeLayout>
+                </RelativeLayout>
 
-                </androidx.cardview.widget.CardView>
-
-            </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 

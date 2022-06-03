@@ -37,7 +37,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="80dp"
-                app:srcCompat="@drawable/profile_icon" />
+                app:srcCompat="@drawable/profile_icon"
+                android:contentDescription="@string/profile_photo" />
 
             <Button
                 android:id="@+id/addProfilePictureBtn"
@@ -46,7 +47,7 @@
                 android:layout_gravity="center_horizontal"
                 android:backgroundTint="#E1BEE7"
                 android:fontFamily="@font/alata"
-                android:text="Add a profile picture"
+                android:text="@string/add_profile_picture"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 app:cornerRadius="10dp" />
@@ -91,7 +92,7 @@
                 android:layout_marginTop="10dp"
                 android:backgroundTint="#C5CAE9"
                 android:fontFamily="@font/alata"
-                android:text="update details"
+                android:text="@string/update_detailsButton"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 app:cornerRadius="10dp" />
@@ -104,7 +105,7 @@
                 android:layout_marginTop="10dp"
                 android:backgroundTint="@color/browser_actions_bg_grey"
                 android:fontFamily="@font/alata"
-                android:text="Delete account"
+                android:text="@string/delete_accountButton"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 app:cornerRadius="10dp" />

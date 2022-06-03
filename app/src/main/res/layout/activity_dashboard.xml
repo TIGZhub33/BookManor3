@@ -57,10 +57,12 @@
                     android:id="@+id/imgbtnProfile"
                     android:layout_width="56dp"
                     android:layout_height="55dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/profileButton"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:clickable="true"
-                    app:srcCompat="@drawable/ic_profile" />
+                    app:srcCompat="@drawable/ic_profile"
+                    android:focusable="true" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout3"
@@ -88,7 +90,8 @@
                             android:text="@string/genres_button"
                             android:textColor="#000000"
                             app:backgroundTint="#FFFFFF"
-                            app:cornerRadius="10dp" />
+                            app:cornerRadius="10dp"
+                            android:focusable="true" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -106,7 +109,8 @@
                             android:text="@string/folders_button"
                             android:textColor="#000000"
                             app:backgroundTint="#FFFFFF"
-                            app:cornerRadius="10dp" />
+                            app:cornerRadius="10dp"
+                            android:focusable="true" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -126,7 +130,8 @@
                             android:textColor="#000000"
                             app:backgroundTint="#FFFFFF"
                             app:cornerRadius="10dp"
-                            tools:ignore="TextContrastCheck" />
+                            tools:ignore="TextContrastCheck"
+                            android:focusable="true" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -183,7 +188,8 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         app:cardCornerRadius="10dp"
-                        app:cardElevation="8dp">
+                        app:cardElevation="8dp"
+                        android:focusable="true">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -208,10 +214,10 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:background="#F8BBD0"
-                                android:contentDescription="genre_label1"
+                                android:contentDescription="@string/genre_label1"
                                 android:fontFamily="@font/alata"
                                 android:gravity="center"
-                                android:text="Poetry"
+                                android:text="@string/poetry_hearing"
                                 android:textAlignment="center"
                                 android:textAllCaps="true"
                                 android:textColor="#000000"
@@ -227,7 +233,8 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         app:cardCornerRadius="10dp"
-                        app:cardElevation="8dp">
+                        app:cardElevation="8dp"
+                        android:focusable="true">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -240,7 +247,7 @@
                                 android:layout_below="@id/defaultGenre2"
                                 android:layout_centerInParent="true"
                                 android:layout_marginTop="10dp"
-                                android:contentDescription="genre_icon2"
+                                android:contentDescription="@string/genre_icon2"
                                 app:srcCompat="@drawable/fiction_icon"
                                 tools:ignore="ImageContrastCheck" />
 
@@ -253,10 +260,10 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:background="#B2DFDB"
-                                android:contentDescription="genre_label2"
+                                android:contentDescription="@string/genre_label2"
                                 android:fontFamily="@font/alata"
                                 android:gravity="center"
-                                android:text="Fiction"
+                                android:text="@string/fiction_heading"
                                 android:textAlignment="center"
                                 android:textAllCaps="true"
                                 android:textColor="#000000"
@@ -285,7 +292,8 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         app:cardCornerRadius="10dp"
-                        app:cardElevation="8dp">
+                        app:cardElevation="8dp"
+                        android:focusable="true">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -300,10 +308,10 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:background="#BBDEFB"
-                                android:contentDescription="genre_label3"
+                                android:contentDescription="@string/genre_label3"
                                 android:fontFamily="@font/alata"
                                 android:gravity="center"
-                                android:text="Drama"
+                                android:text="@string/drama"
                                 android:textAlignment="center"
                                 android:textAllCaps="true"
                                 android:textColor="#000000"
@@ -316,7 +324,7 @@
                                 android:layout_below="@id/defaultGenre3"
                                 android:layout_centerInParent="true"
                                 android:layout_marginTop="10dp"
-                                android:contentDescription="genre_icon3"
+                                android:contentDescription="@string/genre_icon3"
                                 app:srcCompat="@drawable/drama_icon" />
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
@@ -328,7 +336,8 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         app:cardCornerRadius="10dp"
-                        app:cardElevation="8dp">
+                        app:cardElevation="8dp"
+                        android:focusable="true">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -343,10 +352,10 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:background="#FF8383"
-                                android:contentDescription="genre_label3"
+                                android:contentDescription="@string/genre_label5"
                                 android:fontFamily="@font/alata"
                                 android:gravity="center"
-                                android:text="Love"
+                                android:text="@string/love"
                                 android:textAlignment="center"
                                 android:textAllCaps="true"
                                 android:textColor="#000000"
@@ -359,7 +368,7 @@
                                 android:layout_below="@id/defaultGenre4"
                                 android:layout_centerInParent="true"
                                 android:layout_marginTop="10dp"
-                                android:contentDescription="genre_icon3"
+                                android:contentDescription="@string/genre_icon4"
                                 app:srcCompat="@drawable/love_icon" />
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
@@ -383,7 +392,8 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         app:cardCornerRadius="10dp"
-                        app:cardElevation="8dp">
+                        app:cardElevation="8dp"
+                        android:focusable="true">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -398,10 +408,10 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:background="#FFF9C4"
-                                android:contentDescription="genre_label3"
+                                android:contentDescription="@string/genre_label4"
                                 android:fontFamily="@font/alata"
                                 android:gravity="center"
-                                android:text="Heart break"
+                                android:text="@string/heart_break"
                                 android:textAlignment="center"
                                 android:textAllCaps="true"
                                 android:textColor="#000000"
@@ -414,7 +424,7 @@
                                 android:layout_below="@id/defaultGenre5"
                                 android:layout_centerInParent="true"
                                 android:layout_marginTop="10dp"
-                                android:contentDescription="genre_icon3"
+                                android:contentDescription="@string/genre_icon5"
                                 app:srcCompat="@drawable/sad_icon" />
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
@@ -426,7 +436,8 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         app:cardCornerRadius="10dp"
-                        app:cardElevation="8dp">
+                        app:cardElevation="8dp"
+                        android:focusable="true">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -441,10 +452,10 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:background="#DBBCFF"
-                                android:contentDescription="genre_label3"
+                                android:contentDescription="@string/genre_label"
                                 android:fontFamily="@font/alata"
                                 android:gravity="center"
-                                android:text="humor"
+                                android:text="@string/humor"
                                 android:textAlignment="center"
                                 android:textAllCaps="true"
                                 android:textColor="#000000"
@@ -457,7 +468,7 @@
                                 android:layout_below="@id/defaultGenre6"
                                 android:layout_centerInParent="true"
                                 android:layout_marginTop="10dp"
-                                android:contentDescription="genre_icon3"
+                                android:contentDescription="@string/genre_icon6"
                                 app:srcCompat="@drawable/humor_icon" />
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
