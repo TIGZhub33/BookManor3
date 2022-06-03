@@ -80,7 +80,7 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/inviteFriednsCardView"
+            android:id="@+id/inviteFriendsCardView"
             android:layout_width="322dp"
             android:layout_height="68dp"
             android:layout_marginStart="50dp"
@@ -142,7 +142,7 @@
                     android:contentDescription="@string/bell_ic" />
 
                 <TextView
-                    android:id="@+id/notifcationsTextView"
+                    android:id="@+id/notificationsTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -163,7 +163,7 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/helpandSupportCardView"
+            android:id="@+id/helpAndSupportCardView"
             android:layout_width="322dp"
             android:layout_height="68dp"
             android:layout_marginStart="50dp"

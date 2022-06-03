@@ -17,16 +17,16 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         manageAccountCv = (CardView) findViewById(R.id.manageAccountCardView);
-        inviteFriendsCv = (CardView) findViewById(R.id.inviteFriednsCardView);
+        inviteFriendsCv = (CardView) findViewById(R.id.inviteFriendsCardView);
         notificationsCv = (CardView) findViewById(R.id.notificationsCardView);
-        helpAndSupportCv = (CardView) findViewById(R.id.helpandSupportCardView);
+        helpAndSupportCv = (CardView) findViewById(R.id.helpAndSupportCardView);
         appInfoCv = (CardView) findViewById(R.id.appInfoCardView);
         signOutCv = (CardView) findViewById(R.id.signOutCardView);
 
         //manageAccountCv.findViewById(R.id.manageAccountCardView);
-        //inviteFriendsCv.findViewById(R.id.inviteFriednsCardView);
+        //inviteFriendsCv.findViewById(R.id.inviteFriendsCardView);
         //notificationsCv.findViewById(R.id.notificationsCardView);
-        //helpAndSupportCv.findViewById(R.id.helpandSupportCardView);
+        //helpAndSupportCv.findViewById(R.id.helpAndSupportCardView);
         //appInfoCv.findViewById(R.id.appInfoCardView);
         //signOutCv.findViewById(R.id.signOutCardView);
 
