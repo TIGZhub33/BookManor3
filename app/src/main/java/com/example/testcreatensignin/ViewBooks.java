@@ -2,6 +2,7 @@ package com.example.testcreatensignin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,7 +27,7 @@ public class ViewBooks extends AppCompatActivity {
 
     private ListView testList;
     private List<Books> bookList;
-
+    private Toolbar toolbar;
     private FloatingActionButton addBook;
 
     private DatabaseReference reference;
@@ -37,6 +38,12 @@ public class ViewBooks extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_books);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar3);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         testList = (ListView) findViewById(R.id.lstBooks);
         bookList = new ArrayList<>();

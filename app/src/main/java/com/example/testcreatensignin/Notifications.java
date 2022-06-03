@@ -1,6 +1,7 @@
 package com.example.testcreatensignin;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 public class Notifications extends AppCompatActivity {
     //Declarations
+    private Toolbar toolbar;
     EditText etEmail, etPhone;
     RadioGroup emailRadioGroup, smsRadioGroup;
     RadioButton yesEmailRadioButton, noEmailRadioButton, yesSmsRadioButton, noSmsRadioButton;
@@ -20,6 +22,12 @@ public class Notifications extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifications);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar6);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         etEmail = (EditText) findViewById(R.id.emailEditText);
         etPhone = (EditText) findViewById(R.id.phoneEditText);

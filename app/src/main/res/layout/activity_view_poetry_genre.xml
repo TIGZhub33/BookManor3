@@ -7,32 +7,21 @@
     tools:context=".ViewPoetryGenre">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar3"
-        android:layout_width="0dp"
+        android:id="@+id/toolbar"
         android:clickable="true"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:background="@color/appColor"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="?attr/actionModeCloseDrawable"
         app:title="Genres"
         app:titleMargin="10dp"
-        app:titleMarginStart="200dp"
+        app:titleMarginStart="100dp"
         app:titleTextColor="@color/black"
         tools:ignore="MissingConstraints"
         android:focusable="true" />
-
-    <ImageButton
-        android:id="@+id/imgBtnBack"
-        android:layout_width="54dp"
-        android:layout_height="55dp"
-        android:outlineAmbientShadowColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back_icon"
-        tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:layout_width="410dp"
@@ -40,7 +29,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar3">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <LinearLayout
             android:id="@+id/linearLayout14"

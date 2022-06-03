@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
@@ -43,7 +44,7 @@ public class AddNewBook extends AppCompatActivity {
     private AutoCompleteTextView folderSelection;
     private Button insertImage, addBook;
     private ImageView imageBook;
-
+    private Toolbar toolbar;
     private String[] genres = {"Poetry", "Fiction", "Romance", "Comedy"};
     private String[] folders = {"2022", "Folder 2", "Folder 3", "Folder 4"};
 
@@ -60,6 +61,13 @@ public class AddNewBook extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_book);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar3);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         bookTitle = (EditText) findViewById(R.id.edtBookTitle);
         bookAuthor = (EditText) findViewById(R.id.edtAuthor);

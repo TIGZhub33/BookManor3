@@ -1,6 +1,7 @@
 package com.example.testcreatensignin;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
@@ -9,12 +10,19 @@ import android.view.View;
 
 public class Help_Menu extends AppCompatActivity {
 
+    private Toolbar toolbar;
     private CardView howWorks, faq, contactUs, termNPrivacy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_menu);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         howWorks = (CardView) findViewById(R.id.cardHowWorks);
         faq = (CardView) findViewById(R.id.cardFAQ);
@@ -49,7 +57,7 @@ public class Help_Menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(Help_Menu.this, TermsAndConditions.class));
+                startActivity(new Intent(Help_Menu.this, TermsConditionsHelp.class));
             }
         });
     }

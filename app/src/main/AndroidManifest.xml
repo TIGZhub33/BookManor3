@@ -3,8 +3,8 @@
     package="com.example.testcreatensignin">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -13,34 +13,45 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TestCreateNSignIn">
-
+        <activity
+            android:name=".TermsConditionsHelp"
+            android:exported="false"
+            android:parentActivityName=".Help_Menu"/>
         <activity
             android:name=".View_Folders_Test"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".DashBoard" />
         <activity
             android:name=".ViewPoetryGenre"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".DashBoard" />
         <activity
             android:name=".Contact_Us"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Help_Menu" />
         <activity
             android:name=".FAQ"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Help_Menu" />
         <activity
             android:name=".How_Book_Manor_Works"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Help_Menu" />
         <activity
             android:name=".Help_Menu"
             android:exported="false" />
         <activity
             android:name=".Settings"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".DashBoard" />
         <activity
             android:name=".Profile"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".DashBoard" />
         <activity
             android:name=".Notifications"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Settings" />
         <activity
             android:name=".ManageAccount"
             android:exported="false" />
@@ -49,34 +60,41 @@
             android:exported="false" />
         <activity
             android:name=".AppInfo"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Settings" />
         <activity
             android:name=".AddFolder"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".ViewAllFolders" />
         <activity
             android:name=".SingleFolder"
             android:exported="false" />
         <activity
             android:name=".ViewAllFolders"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".DashBoard" />
         <activity
             android:name=".FloatingAdd"
             android:exported="false" />
         <activity
             android:name=".ViewGenres"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".DashBoard" />
         <activity
             android:name=".AddGenres"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".ViewGenres" />
         <activity
             android:name=".SingleBookView"
             android:exported="false" />
         <activity
             android:name=".ViewBooks"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".DashBoard" />
         <activity
             android:name=".AddNewBook"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".ViewBooks" />
         <activity
             android:name=".SplashScreen"
             android:exported="false" />
@@ -85,7 +103,8 @@
             android:exported="false" />
         <activity
             android:name=".TermsAndConditions"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".CreateActivity" />
         <activity
             android:name=".SignInActivity"
             android:exported="false" />

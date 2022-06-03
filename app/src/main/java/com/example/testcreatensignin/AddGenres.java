@@ -3,6 +3,8 @@ package com.example.testcreatensignin;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -27,6 +29,7 @@ public class AddGenres extends AppCompatActivity {
     DatabaseReference databaseReference;
     GenreInfo genreInfo;
     String customGenreName, booksGoalS;
+    private Toolbar toolbar;
     //int booksGoal;
     String booksGoal;
     private Bitmap icon;
@@ -39,6 +42,12 @@ public class AddGenres extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_genres);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar3);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         etGenreName = (EditText) findViewById(R.id.editTextGenreName);
         etNoBooksGoal = (EditText) findViewById(R.id.editTextNumBooks);

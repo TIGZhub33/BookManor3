@@ -1,6 +1,7 @@
 package com.example.testcreatensignin;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
@@ -17,11 +18,18 @@ public class ViewGenres extends AppCompatActivity {
     private CardView fictionCardView;
     private CardView romanceCardView;
     private CardView comedyCardView;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_genres);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         fabGenres = (FloatingActionButton) findViewById(R.id.fabAddGenres);
         poetryCardView = (CardView) findViewById(R.id.poetryCardView);

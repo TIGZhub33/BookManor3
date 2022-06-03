@@ -1,6 +1,7 @@
 package com.example.testcreatensignin;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Profile extends AppCompatActivity {
 
+    private Toolbar toolbar;
     private FloatingActionButton floatingAdd;
     private Button manageAccountButton;
 
@@ -18,6 +20,12 @@ public class Profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        toolbar = (Toolbar) findViewById(R.id.addToolbar3);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         floatingAdd = (FloatingActionButton) findViewById(R.id.floatingAddButton);
 

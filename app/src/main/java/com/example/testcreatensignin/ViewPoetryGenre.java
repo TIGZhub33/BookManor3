@@ -2,6 +2,7 @@ package com.example.testcreatensignin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
@@ -24,7 +25,7 @@ import java.util.List;
 public class ViewPoetryGenre extends AppCompatActivity {
 
     private FloatingActionButton fabGenres;
-
+    private Toolbar toolbar;
     private ListView testList;
     private List<GenreInfo> genreList;
 
@@ -34,6 +35,12 @@ public class ViewPoetryGenre extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_poetry_genre);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         testList = (ListView) findViewById(R.id.lstGenres);
         genreList = new ArrayList<>();

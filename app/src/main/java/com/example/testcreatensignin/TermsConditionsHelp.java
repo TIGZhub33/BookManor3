@@ -5,14 +5,14 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 
-public class Contact_Us extends AppCompatActivity {
+public class TermsConditionsHelp extends AppCompatActivity {
 
     private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact_us);
+        setContentView(R.layout.activity_terms_conditions_help);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
