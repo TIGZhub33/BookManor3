@@ -169,25 +169,41 @@
                 app:srcCompat="@drawable/ic_android_black_24dp" />
 
             <Button
-                android:id="@+id/btnInsertImage"
-                android:layout_width="165dp"
+                android:id="@+id/btnCameraImage"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imgPlaceholder"
-                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="#E1BEE7"
                 android:clickable="true"
                 android:enabled="true"
-                android:text="@string/insert_image"
+                android:focusable="true"
+                android:text="Camera"
                 android:textColor="#000000"
-                app:cornerRadius="10dp"
-                android:focusable="true" />
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/btnGalleryImage"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgPlaceholder"
+                android:layout_marginTop="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:backgroundTint="#E1BEE7"
+                android:clickable="true"
+                android:enabled="true"
+                android:focusable="true"
+                android:text="Gallery"
+                android:textColor="#000000"
+                app:cornerRadius="10dp" />
 
             <TextView
                 android:id="@+id/txtNumberOfPages"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/btnInsertImage"
+                android:layout_below="@+id/btnCameraImage"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/alata"
@@ -199,7 +215,7 @@
                 android:id="@+id/edtNumberOfPages"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/btnInsertImage"
+                android:layout_below="@+id/btnCameraImage"
                 android:layout_marginTop="15dp"
                 android:layout_toEndOf="@+id/txtNumberOfPages"
                 android:ems="10"

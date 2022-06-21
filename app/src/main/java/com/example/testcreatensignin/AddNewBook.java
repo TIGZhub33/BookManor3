@@ -6,9 +6,11 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.FileProvider;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -17,8 +19,10 @@ import android.icu.text.DateFormat;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.text.Editable;
+import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
@@ -29,11 +33,17 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -42,7 +52,7 @@ public class AddNewBook extends AppCompatActivity {
     private EditText bookTitle, bookAuthor, bookIllustrator, bookPages, bookPageRead;
     private AutoCompleteTextView genreSelection;
     private AutoCompleteTextView folderSelection;
-    private Button insertImage, addBook;
+    private Button cameraImage, galleryImage, addBook;
     private ImageView imageBook;
     private Toolbar toolbar;
     private String[] genres = {"Poetry", "Fiction", "Romance", "Comedy"};
@@ -53,8 +63,12 @@ public class AddNewBook extends AppCompatActivity {
 
     private static final int REQUEST_IMAGE_CAPTURE = 0;
     private static final int REQUEST_IMAGE_CAPTURE_PERMISSION=100;
+    private static final int GALLERY_REQUEST_CODE=105;
 
     private DatabaseReference dbReference, dbReferencePoetry, dbReferenceFiction, dbReferenceRomance, dbReferenceComedy;
+    private StorageReference stReference;
+
+    String currentPhotoPath;
 
     @SuppressLint("ResourceType")
     @Override
@@ -76,7 +90,8 @@ public class AddNewBook extends AppCompatActivity {
         bookPageRead = (EditText) findViewById(R.id.edtPageLastRead);
         genreSelection = (AutoCompleteTextView) findViewById(R.id.autoTxtGenreSelection);
         folderSelection = (AutoCompleteTextView) findViewById(R.id.autoTxtFolderSelection);
-        insertImage = (Button) findViewById(R.id.btnInsertImage);
+        cameraImage = (Button) findViewById(R.id.btnCameraImage);
+        galleryImage = (Button) findViewById(R.id.btnGalleryImage);
         addBook = (Button) findViewById(R.id.btnAddBook);
         imageBook = (ImageView) findViewById(R.id.imgPlaceholder);
 
@@ -85,6 +100,8 @@ public class AddNewBook extends AppCompatActivity {
 
         genreSelection.setAdapter(adapterItem1);
         folderSelection.setAdapter(adapterItem2);
+
+        stReference = FirebaseStorage.getInstance().getReference();
 
         //dbReference = FirebaseDatabase.getInstance().getReference("Genres/Folders/Books");
 
@@ -142,7 +159,7 @@ public class AddNewBook extends AppCompatActivity {
             }
         });
 
-        insertImage.setOnClickListener(new View.OnClickListener() {
+        cameraImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -154,8 +171,18 @@ public class AddNewBook extends AppCompatActivity {
                 }
                 else
                 {
-                    takePhoto();
+                    //takePhoto();
+                    dispatchTakePictureIntent();
                 }
+            }
+        });
+
+        galleryImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent gall = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(gall, GALLERY_REQUEST_CODE);
             }
         });
 
@@ -181,13 +208,119 @@ public class AddNewBook extends AppCompatActivity {
 
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == REQUEST_IMAGE_CAPTURE && data != null)
+        if(requestCode == REQUEST_IMAGE_CAPTURE)
         {
-            String cTitle = bookTitle.getText().toString();
+            if(resultCode == Activity.RESULT_OK)
+            {
+                File f = new File(currentPhotoPath);
+                imageBook.setImageURI(Uri.fromFile(f));
+                Log.d("tag", "Absolute Url of image is " + Uri.fromFile(f));
 
-            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-            imageBook.setImageBitmap(bitmap);
+                //Code retribution
+                //https://developer.android.com/training/camera/photobasics
 
+
+                Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+                Uri contentUri = Uri.fromFile(f);
+                mediaScanIntent.setData(contentUri);
+                this.sendBroadcast(mediaScanIntent);
+
+                uploadImgToFirebase(f.getName(), contentUri);
+            }
+        }
+
+        if(requestCode == GALLERY_REQUEST_CODE)
+        {
+            if(resultCode == Activity.RESULT_OK)
+            {
+                Uri contentUri = data.getData();
+                String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+                String imageFileName = "JPEG_" + timeStamp + "." + getFileExt(contentUri);
+                Log.d("tag", "onActivityResult: Gallery image Uri: " + imageFileName);
+                imageBook.setImageURI(contentUri);
+
+                uploadImgToFirebase(imageFileName, contentUri);
+
+            }
+        }
+
+    }
+
+    private void uploadImgToFirebase(String imageFileName, Uri contentUri) {
+
+        StorageReference image = stReference.child("Images/Books/" + imageFileName);
+
+        image.putFile(contentUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                image.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Log.d("tag", "onSuccess: Uploaded Image URL is " + uri.toString());
+                    }
+                });
+
+                Toast.makeText(AddNewBook.this, "Image upload successful.", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(AddNewBook.this, "Image upload failed!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private String getFileExt(Uri contentUri) {
+
+        ContentResolver cR = getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cR.getType(contentUri));
+    }
+
+
+    //Code retribution
+    //https://developer.android.com/training/camera/photobasics
+
+    private File createImageFile() throws IOException {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        //File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+
+        // Save a file: path for use with ACTION_VIEW intents
+        currentPhotoPath = image.getAbsolutePath();
+        return image;
+    }
+
+    //Code retribution
+    //https://developer.android.com/training/camera/photobasics
+
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        // Ensure that there's a camera activity to handle the intent
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            // Create the File where the photo should go
+            File photoFile = null;
+            try {
+                photoFile = createImageFile();
+            } catch (IOException ex) {
+                // Error occurred while creating the File
+            }
+            // Continue only if the File was successfully created
+            if (photoFile != null) {
+                Uri photoURI = FileProvider.getUriForFile(this,
+                        "com.example.android.fileprovider",
+                        photoFile);
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+            }
         }
     }
 
@@ -200,19 +333,18 @@ public class AddNewBook extends AppCompatActivity {
                 ActivityCompat.checkSelfPermission(this,
                         Manifest.permission.CAMERA) ==
                         PackageManager.PERMISSION_GRANTED) {
+
             //call method to take a photo
-            takePhoto();
+
+            //takePhoto();
+            dispatchTakePictureIntent();
+        }
+        else
+        {
+            Toast.makeText(this, "Camera permission needed to use camera.", Toast.LENGTH_SHORT).show();
         }
     }
 
-    /*
-    private String getFileExtension(Uri uri){
-
-        ContentResolver cR = getContentResolver();
-        MimeTypeMap mime = MimeTypeMap.getSingleton();
-        return mime.getExtensionFromMimeType(cR.getType(uri));
-    }
-     */
 
     public void addNewBook(){
 
@@ -276,16 +408,6 @@ public class AddNewBook extends AppCompatActivity {
             bookPageRead.requestFocus();
             return;
         }
-
-        /*
-        if(cImage.isEmpty())
-        {
-            imageBook.setError("Image is required!");
-            Toast.makeText(AddNewBook.this, "Image is required!", Toast.LENGTH_LONG).show();
-            imageBook.requestFocus();
-            return;
-        }
-         */
 
         Books book = new Books(cTitle, cAuthor, cIllustrator, cNoPages, cPageLastRead, cDateAdded);
 
