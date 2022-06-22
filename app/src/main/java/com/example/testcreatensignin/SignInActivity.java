@@ -1,10 +1,13 @@
 package com.example.testcreatensignin;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -102,9 +106,27 @@ public class SignInActivity extends AppCompatActivity {
 
                 if(task.isSuccessful())
                 {
-                    Toast.makeText(SignInActivity.this, "Successfully signed in!!", Toast.LENGTH_LONG).show();
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    if(user.isEmailVerified() != true)
+                    {
+                        Toast.makeText(SignInActivity.this, "User email is not verified. A new verification link has been sent. Please check your email and click on the verification link", Toast.LENGTH_LONG).show();
+                        user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Log.d(TAG, "Email sent.");
+                                }
+                            }
+                        });
+                    }
+                    else
+                    {
+                        Toast.makeText(SignInActivity.this, "Successfully signed in!!", Toast.LENGTH_LONG).show();
 
-                    startActivity(new Intent(SignInActivity.this, DashBoard.class));
+                        startActivity(new Intent(SignInActivity.this, DashBoard.class));
+
+                    }
+
                 }
                 else
                 {
