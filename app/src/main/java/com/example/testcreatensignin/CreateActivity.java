@@ -1,10 +1,13 @@
 package com.example.testcreatensignin;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +20,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -146,6 +150,18 @@ public class CreateActivity extends AppCompatActivity {
 
                 if(task.isSuccessful())
                 {
+
+                    FirebaseUser user = mAuth.getCurrentUser();
+
+                    user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Log.d(TAG, "Email sent.");
+                                    }
+                                }
+                            });
+
                     Toast.makeText(CreateActivity.this, "Account created successfully!", Toast.LENGTH_LONG).show();
 
                     startActivity(new Intent(CreateActivity.this, SignInActivity.class));
