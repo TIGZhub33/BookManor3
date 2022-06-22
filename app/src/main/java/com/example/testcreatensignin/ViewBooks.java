@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,6 +36,8 @@ public class ViewBooks extends AppCompatActivity {
 
     private TextView test;
 
+    private String userId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +54,15 @@ public class ViewBooks extends AppCompatActivity {
 
         addBook = (FloatingActionButton) findViewById(R.id.floatingAddButton);
 
-        reference = FirebaseDatabase.getInstance().getReference("Genres/Poetry/Folders/2022/Books");
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(user != null)
+        {
+            userId = user.getUid();
+        }
+
+        reference = FirebaseDatabase.getInstance().getReference(userId + "/Genres/Poetry/Folders/2022/Books");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override

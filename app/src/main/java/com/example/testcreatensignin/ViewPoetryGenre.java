@@ -13,6 +13,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,6 +33,8 @@ public class ViewPoetryGenre extends AppCompatActivity {
 
     private DatabaseReference reference;
 
+    private String userId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +49,15 @@ public class ViewPoetryGenre extends AppCompatActivity {
         testList = (ListView) findViewById(R.id.lstGenres);
         genreList = new ArrayList<>();
 
-        reference = FirebaseDatabase.getInstance().getReference("Genres");
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(user != null)
+        {
+            userId = user.getUid();
+        }
+
+        reference = FirebaseDatabase.getInstance().getReference(userId + "/Genres");
 
 
         reference.addValueEventListener(new ValueEventListener() {

@@ -16,6 +16,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.io.IOException;
@@ -38,6 +41,8 @@ public class AddGenres extends AppCompatActivity {
 
     private DatabaseReference dbReference;
 
+    private String userId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,8 +60,15 @@ public class AddGenres extends AppCompatActivity {
         insertIconButton = (Button) findViewById(R.id.genreIconButton);
         createGenreButton = (Button) findViewById(R.id.createGenreButton);
 
-        //dbReference = FirebaseDatabase.getInstance().getReference("GenreInfo");
-        dbReference = FirebaseDatabase.getInstance().getReference("Genres");
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(user != null)
+        {
+            userId = user.getUid();
+        }
+
+        dbReference = FirebaseDatabase.getInstance().getReference(userId + "/Genres");
 
         ivGenreIcon = (ImageView) findViewById(R.id.genreIconImageView);
 
@@ -135,16 +147,12 @@ public class AddGenres extends AppCompatActivity {
     public void createNewGenre(){
 
         String customGenreName = etGenreName.getText().toString();
-        //int booksGoal = Integer.parseInt(etNoBooksGoal.getText().toString());
+
         int booksGoal = Integer.parseInt(etNoBooksGoal.getText().toString());
 
-        //GenreInfo genre = new GenreInfo(customGenreName, booksGoal, ivGenreIcon);
         GenreInfo genre = new GenreInfo(customGenreName, booksGoal);
 
-        //dbReference.push().setValue(genre);
         dbReference.child(customGenreName).setValue(genre);
-
-        //dbReference.child(cTitle).setValue(book);
 
         Toast.makeText(AddGenres.this, "Genre created successfully!", Toast.LENGTH_SHORT).show();
 

@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +30,10 @@ public class View_Folders_Test extends AppCompatActivity {
     private Toolbar toolbar;
     private DatabaseReference reference;
 
+    ///////////////////////////
+    private String userId;
+    ///////////////////////////
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +48,15 @@ public class View_Folders_Test extends AppCompatActivity {
         testList = (ListView) findViewById(R.id.lstFolders);
         folderList = new ArrayList<>();
 
-        reference = FirebaseDatabase.getInstance().getReference("Genres/Poetry/Folders");
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(user != null)
+        {
+            userId = user.getUid();
+        }
+
+        reference = FirebaseDatabase.getInstance().getReference(userId + "/Genres/Poetry/Folders");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override

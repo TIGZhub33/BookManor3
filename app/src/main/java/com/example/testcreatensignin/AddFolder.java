@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -28,6 +30,8 @@ public class AddFolder extends AppCompatActivity {
     private ArrayAdapter<String> adapterItem1;
 
     private DatabaseReference dbReference, dbReferencePoetry, dbReferenceFiction, dbReferenceRomance, dbReferenceComedy;
+
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,14 @@ public class AddFolder extends AppCompatActivity {
 
         genreSelection.setAdapter(adapterItem1);
 
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(user != null)
+        {
+            userId = user.getUid();
+        }
+
         genreSelection.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -57,7 +69,8 @@ public class AddFolder extends AppCompatActivity {
                 Toast.makeText(AddFolder.this, "Genre " + genre, Toast.LENGTH_SHORT).show();
 
                 if(genre == "Poetry"){
-                    dbReference = FirebaseDatabase.getInstance().getReference("Genres/Poetry/Folders");
+
+                    dbReference = FirebaseDatabase.getInstance().getReference(userId + "/Genres/Poetry/Folders");
                 }
                 if(genre == "Romance"){
                     dbReference = FirebaseDatabase.getInstance().getReference("Genres/Romance/Folders");

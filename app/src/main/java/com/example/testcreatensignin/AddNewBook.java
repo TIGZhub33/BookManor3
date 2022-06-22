@@ -35,6 +35,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -70,6 +72,8 @@ public class AddNewBook extends AppCompatActivity {
 
     String currentPhotoPath;
 
+    private String userId;
+
     @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,13 +107,13 @@ public class AddNewBook extends AppCompatActivity {
 
         stReference = FirebaseStorage.getInstance().getReference();
 
-        //dbReference = FirebaseDatabase.getInstance().getReference("Genres/Folders/Books");
 
-        //dbReference = FirebaseDatabase.getInstance().getReference("Books");
-        //dbReferencePoetry = FirebaseDatabase.getInstance().getReference("Genres/Poetry/Books");
-        //dbReferenceRomance = FirebaseDatabase.getInstance().getReference("Genres/Romance/Books");
-        //dbReferenceFiction = FirebaseDatabase.getInstance().getReference("Genres/Fiction/Books");
-        //dbReferenceComedy = FirebaseDatabase.getInstance().getReference("Genres/Comedy/Books");
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(user != null)
+        {
+            userId = user.getUid();
+        }
 
         genreSelection.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -120,7 +124,7 @@ public class AddNewBook extends AppCompatActivity {
 
 
                 if(genre == "Poetry"){
-                    dbReference = FirebaseDatabase.getInstance().getReference("Genres/Poetry/Books");
+                    dbReference = FirebaseDatabase.getInstance().getReference(userId + "/Genres/Poetry/Books");
                 }
                 if(genre == "Romance"){
                     dbReference = FirebaseDatabase.getInstance().getReference("Genres/Romance/Books");
@@ -144,7 +148,7 @@ public class AddNewBook extends AppCompatActivity {
 
 
                 if(folder == "2022"){
-                    dbReference = FirebaseDatabase.getInstance().getReference("Genres/Poetry/Folders/2022/Books");
+                    dbReference = FirebaseDatabase.getInstance().getReference(userId + "/Genres/Poetry/Folders/2022/Books");
                 }
                 if(folder == "Romance"){
                     dbReference = FirebaseDatabase.getInstance().getReference("Genres/Romance/Books");
@@ -411,7 +415,6 @@ public class AddNewBook extends AppCompatActivity {
 
         Books book = new Books(cTitle, cAuthor, cIllustrator, cNoPages, cPageLastRead, cDateAdded);
 
-        //dbReference.push().setValue(book);
         dbReference.child(cTitle).setValue(book);
 
         Toast.makeText(AddNewBook.this, "Data inserted!  :)", Toast.LENGTH_SHORT).show();
