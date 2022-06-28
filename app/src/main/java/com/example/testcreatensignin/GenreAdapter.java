@@ -97,7 +97,14 @@ public class GenreAdapter extends ArrayAdapter {
 
                 booksLeft = genres.getBooksGoal() - intBookCount;
 
-                count.setText(booksLeft + " More books needed.");
+                if(booksLeft == 0)
+                {
+                    count.setText("Goal Achieved");
+                }
+                else
+                {
+                    count.setText(booksLeft + " More books needed.");
+                }
 
             }
 

@@ -84,7 +84,10 @@ public class GraphAdapter extends ArrayAdapter {
                 percentageComp =((float)intBookCount / (float)genres.getBooksGoal()) * 100;
                 //percentageComp =((float)intBookCount / (float)booksGoal) * 100;
 
-                percentage.setText(percentageComp + "%");
+                int displayPer = (int) percentageComp;
+
+                //percentage.setText(percentageComp + "%");
+                percentage.setText(displayPer + "%");
 
             }
 

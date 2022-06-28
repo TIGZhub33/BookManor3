@@ -1,6 +1,7 @@
 package com.example.testcreatensignin;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,10 @@ public class BookAdapter extends ArrayAdapter {
     private TextView progComp;
     private ProgressBar horProgBar;
     private int progAnswer;
+
+    private ImageView fav, favRed;
+
+
     ////////////////////////
 
     public BookAdapter(Activity mContext, List<Books> booksList){
@@ -68,6 +73,27 @@ public class BookAdapter extends ArrayAdapter {
 
         progComp.setText( progAnswer + " pages left.");
         /////////////////
+
+        favRed = listItemView.findViewById(R.id.imgFavChecked);
+        fav = listItemView.findViewById(R.id.imgFavourite);
+
+        fav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                favRed.setVisibility(View.VISIBLE);
+                fav.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        favRed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                fav.setVisibility(View.VISIBLE);
+                favRed.setVisibility(View.INVISIBLE);
+            }
+        });
 
         return listItemView;
     }
