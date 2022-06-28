@@ -23,7 +23,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/poetryCardView"
                 android:layout_width="wrap_content"
-                android:layout_height="120dp"
+                android:layout_height="200dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:clickable="true"
@@ -53,8 +53,8 @@
                         android:id="@+id/textGoal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="130dp"
                         android:layout_below="@+id/txtGenreName"
+                        android:layout_marginLeft="130dp"
                         android:fontFamily="@font/alata"
                         android:text="Books Goal:"
                         android:textColor="@color/black"
@@ -65,12 +65,46 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txtGenreName"
-                        android:layout_toRightOf="@+id/textGoal"
                         android:layout_marginLeft="9dp"
+                        android:layout_toRightOf="@+id/textGoal"
+                        android:fontFamily="@font/alata"
+                        android:text="0"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/txtGoalCompletion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textGoal"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/alata"
+                        android:text="Goal Completion"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/txtBooksCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtGoalCompletion"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
                         android:fontFamily="@font/alata"
                         android:text="---"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="15sp" />
+
+                    <ProgressBar
+                        android:id="@+id/horProgressBarBooks"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtBooksCount"
+                        android:layout_marginTop="5dp"
+                        android:padding="10dp"
+                        android:progressDrawable="@drawable/horizontal_progress_bar" />
 
 
                 </RelativeLayout>

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,12 @@ public class BookAdapter extends ArrayAdapter {
     private Activity mContext;
     private List<Books> booksList;
     private TextView aTitle, aAuthor, aIllustrator, aPages, aPagesRead, aDate;
+
+    ////////////////////////
+    private TextView progComp;
+    private ProgressBar horProgBar;
+    private int progAnswer;
+    ////////////////////////
 
     public BookAdapter(Activity mContext, List<Books> booksList){
         super(mContext, R.layout.book_item, booksList);
@@ -49,6 +56,18 @@ public class BookAdapter extends ArrayAdapter {
         aPages.setText(books.getPages());
         aPagesRead.setText(books.getPagesRead());
         aDate.setText(books.getDateBookAdded());
+
+        /////////////////
+        progComp = listItemView.findViewById(R.id.txtProgComp);
+        horProgBar = listItemView.findViewById(R.id.horProgressBarPages);
+
+        horProgBar.setMax(Integer.parseInt(books.getPages()));
+        horProgBar.setProgress(Integer.parseInt(books.getPagesRead()));
+
+        progAnswer = Integer.parseInt(books.getPages()) - Integer.parseInt(books.getPagesRead());
+
+        progComp.setText( progAnswer + " pages left.");
+        /////////////////
 
         return listItemView;
     }

@@ -1,7 +1,6 @@
 package com.example.testcreatensignin;
 
 import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,18 +19,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class GenreAdapter extends ArrayAdapter {
+public class GraphAdapter extends ArrayAdapter {
 
     private Activity mContext;
     private List<GenreInfo> genresList;
-    private TextView genreName, goalSet;
-
-    ///////////////////////////////
-    private ProgressBar horProgBar;
-    private TextView count;
+    private TextView genreTextName, percentage;
+    private ProgressBar graphProgbar;
 
     private DatabaseReference referenceP;
 
@@ -39,11 +34,10 @@ public class GenreAdapter extends ArrayAdapter {
 
     private float percentageComp;
 
-    private int booksLeft;
-    ///////////////////////////////
+    private int booksGoal;
 
-    public GenreAdapter(Activity mContext, List<GenreInfo> genresList){
-        super(mContext, R.layout.item_genre, genresList);
+    public GraphAdapter(Activity mContext, List<GenreInfo> genresList){
+        super(mContext, R.layout.graph_item, genresList);
 
         this.mContext = mContext;
         this.genresList = genresList;
@@ -55,22 +49,15 @@ public class GenreAdapter extends ArrayAdapter {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         LayoutInflater inflater = mContext.getLayoutInflater();
-        View listItemView = inflater.inflate(R.layout.item_genre, null, true);
+        View listItemView = inflater.inflate(R.layout.graph_item, null, true);
 
-        genreName = listItemView.findViewById(R.id.txtGenreName);
-        goalSet = listItemView.findViewById(R.id.txtGoalSet);
+        graphProgbar = (ProgressBar) listItemView.findViewById(R.id.graphProgressBar);
+        genreTextName = listItemView.findViewById(R.id.genreTxT);
+        percentage = listItemView.findViewById(R.id.progressPercentage);
 
-        //GenreInfo genres = genresList.get(position);
         GenreInfo genres = genresList.get(position);
 
-        genreName.setText(genres.getCustomGenreName());
-        //goalSet.setText(genres.getBooksGoal());
-        goalSet.setText(Integer.toString(genres.getBooksGoal()));
-
-
-        ///////////////////////////////
-        horProgBar = listItemView.findViewById(R.id.horProgressBarBooks);
-        count = listItemView.findViewById(R.id.txtBooksCount);
+        genreTextName.setText(genres.getCustomGenreName());
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -80,7 +67,6 @@ public class GenreAdapter extends ArrayAdapter {
         }
 
         referenceP = FirebaseDatabase.getInstance().getReference(userId + "/Genres/" + genres.getCustomGenreName() + "/Folders/2022");
-
 
         //Code retribution
         //https://stackoverflow.com/questions/52641178/how-to-count-children-in-firebase-database-android
@@ -92,12 +78,13 @@ public class GenreAdapter extends ArrayAdapter {
                 Long bookCount = new Long(snapshot.getChildrenCount());
                 int intBookCount = bookCount.intValue();
 
-                horProgBar.setMax(genres.getBooksGoal());
-                horProgBar.setProgress(intBookCount);
+                graphProgbar.setMax(genres.getBooksGoal());
+                graphProgbar.setProgress(intBookCount);
 
-                booksLeft = genres.getBooksGoal() - intBookCount;
+                percentageComp =((float)intBookCount / (float)genres.getBooksGoal()) * 100;
+                //percentageComp =((float)intBookCount / (float)booksGoal) * 100;
 
-                count.setText(booksLeft + " More books needed.");
+                percentage.setText(percentageComp + "%");
 
             }
 
@@ -107,10 +94,6 @@ public class GenreAdapter extends ArrayAdapter {
             }
         });
 
-        ///////////////////////////////
-
-
         return listItemView;
-
     }
 }
