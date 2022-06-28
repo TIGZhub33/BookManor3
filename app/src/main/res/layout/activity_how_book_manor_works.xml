@@ -28,9 +28,9 @@
             android:focusable="true" />
 
         <LinearLayout
+            android:id="@+id/linearW"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/linearW"
             android:layout_below="@+id/toolbar"
             android:orientation="vertical">
 
@@ -42,23 +42,22 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:clickable="true"
+                android:clickable="false"
                 android:focusable="true">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <TextView
-                        android:id="@+id/textDownload"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
+                    <Button
+                        android:id="@+id/downloadButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
                         android:fontFamily="@font/alata"
                         android:text="@string/download_user_manual"
-                        android:textColor="#43A6C6"
-                        android:textSize="20sp"
-                        tools:ignore="TextContrastCheck" />
+                        android:textColor="#8F0000"
+                        android:textSize="18sp" />
 
                 </RelativeLayout>
 
